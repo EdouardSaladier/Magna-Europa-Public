@@ -1,0 +1,49 @@
+
+state={
+	id=438
+	name="STATE_438"
+
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 8
+
+		}
+		victory_points = {
+			19566 10 
+		}
+		victory_points = {
+			19569 3 
+		}
+		victory_points = {
+			9876 3 
+		}
+		victory_points = {
+			14601 10 
+		}
+		victory_points = {
+			10147 3 
+		}
+		victory_points = {
+			8491 1 
+		}
+		victory_points = {
+			14646 10 
+		}
+		victory_points = {
+			10047 1 
+		}
+		victory_points = {
+			11543 1 
+		}
+
+	}
+
+	provinces={
+		1247 4510 6757 9876 10147 14601 14627 14680 14763 19560 19564 19565 19566 19569 19572 19574 
+	}
+	manpower=1436557
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

@@ -1,0 +1,55 @@
+edo_scripted_puppet = {
+
+	var:edo_release_target = {
+		drop_cosmetic_tag = yes
+	}
+	
+	if = {
+		limit = {
+			NOT = { has_government = democratic }
+			has_dlc = "La Resistance"
+		}
+		puppet = var:edo_release_target
+	}
+
+	else_if = {
+		limit = {
+			NOT = { has_government = democratic }
+			NOT = { has_dlc = "La Resistance" }
+		}
+		puppet = var:edo_release_target
+	}	
+
+	else = {
+		var:edo_release_target = {
+			set_politics = {
+				ruling_party = democratic
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.5
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { is_in_faction = yes }
+			}
+			random_country = {
+				limit = { 
+					is_faction_leader = yes 
+					is_in_faction_with = ROOT
+				}
+				add_to_faction = var:edo_release_target
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Man the Guns"
+			}
+			puppet = var:edo_release_target
+			set_autonomy = { target = var:edo_release_target autonomy_state = autonomy_supervised_state }
+		}
+	}
+	
+	clear_variable = edo_release_target
+}

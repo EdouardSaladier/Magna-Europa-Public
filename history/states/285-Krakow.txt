@@ -1,0 +1,48 @@
+
+state={
+	id=285
+	name="STATE_285"
+	resources={
+		steel=24.000
+		aluminium=7.000
+		oil=3.000
+	}
+
+	history={
+		owner = POL
+		add_core_of = POL
+		buildings = {
+			infrastructure = 6
+			arms_factory = 1
+			industrial_complex = 3
+			air_base = 4
+
+		}
+		victory_points = {
+			10589 1 
+		}
+		victory_points = {
+			7462 1 
+		}
+		victory_points = {
+			5847 1 
+		}
+		victory_points = {
+			2512 1 
+		}
+		victory_points = {
+			2066 5 
+		}
+		victory_points = {
+			3565 5 
+		}
+
+	}
+
+	provinces={
+		421 484 634 1090 1257 2512 3587 3985 4260 4457 5209 5687 5847 6969 7331 7462 8235 8711 9238 9434 9768 9920 10277 10589 10765 11574 11610 14175 14184 14189 14230 14234 14237 14266 14287 14296 14322 14323 14328 14348 14349 14369 14377 14378 14414 14426 15691 
+	}
+	manpower=3323520
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

@@ -1,0 +1,22 @@
+state={
+	id=552
+	name="STATE_552"
+	
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = BAL
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+	
+	provinces={
+		125 4896 6861 10263 14678 
+	}
+	manpower=40747
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

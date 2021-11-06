@@ -1,0 +1,873 @@
+is_potential_enemy = {
+	AND = {
+		is_in_faction = yes
+		ROOT = { is_in_faction = yes }
+		NOT = { is_in_faction_with = ROOT }
+	}
+}
+
+Baltics_MR = {
+	OR = {
+		state = 108
+		state = 109
+		state = 115
+		state = 116
+		state = 117
+		state = 118
+	}
+}
+
+East_Poland_MR = {
+	OR = {
+		state = 380
+		state = 291
+		state = 278
+		state = 388
+		state = 290
+		state = 289
+		state = 288
+		state = 387
+		state = 284
+		state = 283
+	}
+}
+
+######################
+###HUNGARY############
+######################
+
+is_small_hungary = {
+	OR = {
+		state = 441
+		state = 103
+		state = 490
+		state = 105
+		state = 483
+		state = 502
+	}
+}
+
+is_hungary_border_state = {
+	OR = {
+		state = 491
+		state = 442
+		state = 501
+		state = 104
+		state = 443
+	}
+}
+
+is_hungary_neighbour_border_state = {
+	OR = {
+		state = 243
+		state = 472
+		state = 474
+		state = 399
+		state = 159
+	}
+}
+
+is_core_hungary = {
+	OR = {
+		state = 441
+		state = 103
+		state = 490
+		state = 105
+		state = 483
+		state = 502
+		state = 491
+		state = 442
+		state = 501
+		state = 104
+		state = 443
+	}
+}
+
+######################
+###ROMANIA############
+######################
+
+is_transsylvania = {
+	OR = {
+		state = 472
+		state = 478
+		state = 239
+		state = 473
+		state = 474
+		state = 102
+		state = 518
+		state = 238
+	}
+}
+
+owns_transsylvania = {
+	AND = {
+		owns_state = 472
+		owns_state = 478
+		owns_state = 239
+		owns_state = 473
+		owns_state = 474
+		owns_state = 102
+		owns_state = 518
+		owns_state = 238
+	}
+}
+
+is_middle_transsylvania = {
+	OR = {
+		state = 472
+		state = 478
+		state = 239
+		state = 473
+		state = 474
+		state = 102
+		state = 518
+	}
+}
+
+is_north_transsylvania = {
+	OR = {
+		state = 472
+		state = 478
+		state = 239
+		state = 473
+	}
+}
+
+is_romanian_hungary_border_state = {
+	OR = {
+		state = 472
+		state = 474
+	}
+}
+
+is_banat = {
+	OR = {
+		state = 101
+		state = 475
+	}
+}
+
+is_dobrudja = {
+	OR = {
+		state = 110
+		state = 365
+	}
+}
+
+is_bessarabia = {
+	OR = {
+		state = 112
+		state = 381
+	}
+}
+
+is_small_romania = {
+	OR = {
+		state = 444
+		state = 111
+		state = 236
+		state = 398
+	}
+}
+
+is_bukovina = {
+	OR = {
+		state = 237
+		state = 397
+		state = 604
+	}
+}
+
+#############################
+###CZECHOSLOVAKIA############
+#############################
+
+is_south_slovakia = {
+	OR = {
+		state = 243
+		state = 465
+	}
+}
+
+is_carpathia_ruthenia = {
+	OR = {
+		state = 242
+		state = 391
+		state = 465
+	}
+}
+
+is_slovakia_contested = {
+	OR = {
+		state = 243
+		state = 242
+		state = 391
+		state = 465
+	}
+}
+
+is_slovakia = {
+	OR = {
+		state = 243
+		state = 244
+		state = 245
+		state = 242
+		state = 391
+		state = 465
+	}
+}
+
+is_central_slovakia = {
+	OR = {
+		state = 244
+		state = 245
+	}
+}
+
+is_zaolzie = {
+	state = 277
+}
+
+is_sudetenland = {
+	OR = {
+		state = 247
+		state = 85
+		state = 492
+		state = 493
+		state = 494
+		state = 495
+	}
+}
+
+is_south_sudetenland = {
+	OR = {
+		state = 494
+		state = 495
+	}
+}
+
+is_west_sudetenland = {
+	OR = {
+		state = 492
+		state = 493
+	}
+}
+
+owns_sudetenland = {
+	AND = {
+		owns_state = 247
+		owns_state = 85
+		owns_state = 492
+		owns_state = 493
+		owns_state = 494
+		owns_state = 495
+	}
+}
+
+is_central_czechia = {
+	OR = {
+		state = 98
+		state = 496
+		state = 498
+		state = 499
+		state = 497
+		state = 246
+		state = 500
+	}
+}
+
+is_core_czecho = {
+	OR = {
+		state = 98
+		state = 496
+		state = 498
+		state = 499
+		state = 497
+		state = 246
+		state = 500
+		state = 244
+		state = 245
+	}
+}
+
+##############################
+###PRUSSIA AND EAST GERMANT###
+##############################
+
+is_eastern_prussia = {
+	OR = {
+		state = 23
+		state = 74
+		state = 413
+	}
+}
+
+owns_eastern_prussia = {
+	AND = {
+		owns_state = 23
+		owns_state = 74
+		owns_state = 413
+	}
+}
+
+is_silesia = {
+	OR = {
+		state = 282
+		state = 281
+		state = 424
+		state = 425
+		state = 426
+	}
+}
+
+owns_silesia = {
+	AND = {
+		owns_state = 282
+		owns_state = 281
+		owns_state = 424
+		owns_state = 425
+		owns_state = 426
+	}
+}
+
+is_pommerania = {
+	OR = {
+		state = 82
+		state = 280
+		state = 428
+		state = 429
+	}
+}
+
+owns_pommerania = {
+	AND = {
+		owns_state = 82
+		owns_state = 280
+		owns_state = 428
+		owns_state = 429
+	}
+}
+
+#############
+###GERMANY###
+#############
+
+is_south_germany = {
+	OR = {
+		state = 93
+		state = 92
+		state = 86
+		state = 400
+		state = 402
+		state = 403
+		state = 87
+	}
+}
+
+is_bavaria = {
+	OR = {
+		state = 93
+		state = 92
+		state = 86
+	}
+}
+
+is_baden_wurtemberg = {
+	OR = {
+		state = 400
+		state = 402
+		state = 403
+		state = 87
+	}
+}
+
+is_north_east_germany = {
+	OR = {
+		state = 79
+		state = 80
+		state = 439
+		state = 440
+	}
+}
+
+is_south_east_germany = {
+	OR = {
+		state = 97
+		state = 96
+		state = 401
+		state = 427
+	}
+}
+
+is_east_germany = {
+	OR = {
+		state = 79
+		state = 80
+		state = 439
+		state = 440
+		state = 97
+		state = 96
+		state = 401
+		state = 427
+	}
+}
+
+is_hesse = {
+	OR = {
+		state = 94
+		state = 404
+	}
+}
+
+is_rheinland = {
+	OR = {
+		state = 90
+		state = 408
+		state = 511
+		state = 89
+		state = 510
+		state = 406
+		state = 405
+	}
+}
+
+is_westphalia = {
+	OR = {
+		state = 84
+		state = 508
+		state = 509
+		state = 88
+	}
+}
+
+is_schleswig = {
+	OR = {
+		state = 78
+		state = 517
+	}
+}
+
+is_hannover = {
+	state = 91
+}
+
+is_north_west_germany = {
+	OR = {
+		state = 90
+		state = 408
+		state = 511
+		state = 89
+		state = 510
+		state = 406
+		state = 405
+		state = 78
+		state = 517
+		state = 91
+		state = 84
+		state = 508
+		state = 509
+		state = 88
+		state = 94
+		state = 404
+	}
+}
+
+is_core_germany = {
+	OR = {
+		state = 90
+		state = 408
+		state = 511
+		state = 89
+		state = 510
+		state = 406
+		state = 405
+		state = 78
+		state = 517
+		state = 91
+		state = 84
+		state = 508
+		state = 509
+		state = 88
+		state = 94
+		state = 404
+		state = 79
+		state = 80
+		state = 439
+		state = 440
+		state = 97
+		state = 96
+		state = 401
+		state = 427
+		state = 93
+		state = 92
+		state = 86
+		state = 400
+		state = 402
+		state = 403
+		state = 87
+	}
+}
+
+is_german_releasable_capital = {
+	OR = {
+		state = 400 #Baden
+		state = 92 #Bavaria
+		state = 95 #Brandenburg
+		state = 91 #Hannover
+		state = 94 #Hessen
+		state = 78 #Holstein
+		state = 79 #Mecklenburg
+		state = 80 #Pommerania
+		state = 97 #Saxony
+		state = 96 #Thuringia
+		state = 87 #Wurtemberg
+		state = 88 #Westphalia
+		state = 89 #Rhineland
+	}
+}
+
+is_german_releasable_tag = {
+	OR = {
+		original_tag = BAD
+		original_tag = BAY
+		original_tag = BRN
+		original_tag = HAN
+		original_tag = HES
+		original_tag = HLS
+		original_tag = MEK
+		original_tag = POM
+		# original_tag = PRE
+		original_tag = RHI
+		original_tag = SAX
+		# original_tag = SIL
+		original_tag = THU
+		original_tag = WUR
+		original_tag = WST
+	}
+}
+
+###Ownership
+
+owns_south_germany = {
+	AND = {
+		owns_state = 93
+		owns_state = 92
+		owns_state = 86
+		owns_state = 400
+		owns_state = 402
+		owns_state = 403
+		owns_state = 87
+	}
+}
+
+owns_bavaria = {
+	AND = {
+		owns_state = 93
+		owns_state = 92
+		owns_state = 86
+	}
+}
+
+owns_baden_wurtemberg = {
+	AND = {
+		owns_state = 400
+		owns_state = 402
+		owns_state = 403
+		owns_state = 87
+	}
+}
+
+owns_north_east_germany = {
+	AND = {
+		owns_state = 79
+		owns_state = 80
+		owns_state = 439
+		owns_state = 440
+	}
+}
+
+owns_south_east_germany = {
+	AND = {
+		owns_state = 97
+		owns_state = 96
+		owns_state = 401
+		owns_state = 427
+	}
+}
+
+owns_east_germany = {
+	AND = {
+		owns_state = 79
+		owns_state = 80
+		owns_state = 439
+		owns_state = 440
+		owns_state = 97
+		owns_state = 96
+		owns_state = 401
+		owns_state = 427
+	}
+}
+
+owns_hesse = {
+	AND = {
+		owns_state = 94
+		owns_state = 404
+	}
+}
+
+owns_rheinland = {
+	AND = {
+		owns_state = 90
+		owns_state = 408
+		owns_state = 511
+		owns_state = 89
+		owns_state = 510
+		owns_state = 406
+		owns_state = 405
+	}
+}
+
+owns_westphalia = {
+	AND = {
+		owns_state = 84
+		owns_state = 508
+		owns_state = 509
+		owns_state = 88
+	}
+}
+
+owns_schleswig = {
+	AND = {
+		owns_state = 78
+		owns_state = 517
+	}
+}
+
+owns_hannover = {
+	owns_state = 91
+}
+
+owns_north_west_germany = {
+	AND = {
+		owns_state = 90
+		owns_state = 408
+		owns_state = 511
+		owns_state = 89
+		owns_state = 510
+		owns_state = 406
+		owns_state = 405
+		owns_state = 78
+		owns_state = 517
+		owns_state = 91
+		owns_state = 84
+		owns_state = 508
+		owns_state = 509
+		owns_state = 88
+		owns_state = 94
+		owns_state = 404
+	}
+}
+
+owns_core_germany = {
+	AND = {
+		owns_state = 90
+		owns_state = 408
+		owns_state = 511
+		owns_state = 89
+		owns_state = 510
+		owns_state = 406
+		owns_state = 405
+		owns_state = 78
+		owns_state = 517
+		owns_state = 91
+		owns_state = 84
+		owns_state = 508
+		owns_state = 509
+		owns_state = 88
+		owns_state = 94
+		owns_state = 404
+		owns_state = 79
+		owns_state = 80
+		owns_state = 439
+		owns_state = 440
+		owns_state = 97
+		owns_state = 96
+		owns_state = 401
+		owns_state = 427
+		owns_state = 93
+		owns_state = 92
+		owns_state = 86
+		owns_state = 400
+		owns_state = 402
+		owns_state = 403
+		owns_state = 87
+	}
+}
+
+is_german_tag = {
+	OR = {
+		original_tag = GER
+		original_tag = DDR
+		original_tag = WGR
+		original_tag = BAD
+		original_tag = BAY
+		original_tag = BRN
+		original_tag = HAN
+		original_tag = HES
+		original_tag = HLS
+		original_tag = MEK
+		original_tag = POM
+		original_tag = PRE
+		original_tag = RHI
+		original_tag = SAX
+		original_tag = SIL
+		original_tag = THU
+		original_tag = WUR
+		original_tag = WST
+		original_tag = SDT
+	}
+}
+
+owns_german_stuff = {
+	AND = {
+		is_german_tag = no
+		OR = {
+			AND = {
+				any_owned_state = {
+					is_north_east_germany = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 440 }
+			}
+			AND = {
+				any_owned_state = {
+					is_south_east_germany = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 401 }
+			}
+			AND = {
+				any_owned_state = {
+					is_rheinland = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 511 }
+			}
+			AND = {
+				any_owned_state = {
+					is_westphalia = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 88 }
+			}
+			AND = {
+				any_owned_state = {
+					is_hesse = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 404 }
+			}
+			AND = {
+				any_owned_state = {
+					is_schleswig = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 517 }
+			}
+			AND = {
+				any_owned_state = {
+					is_bavaria = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 92 }
+			}
+			AND = {
+				any_owned_state = {
+					is_baden_wurtemberg = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				NOT = { owns_state = 87 }
+			}
+		}
+	}
+}
+
+#############################
+###YUGOSLAVIA############
+#############################
+
+is_vojvodina_and_banat = {
+	OR = {
+		state = 420
+		state = 159
+		state = 477
+		state = 476
+		state = 363
+	}
+}
+
+is_vojvodina = {
+	OR = {
+		state = 420
+		state = 159
+		state = 477
+	}
+}
+
+is_yugoslav_hungary_border_state = {
+	OR = {
+		state = 420
+		state = 159
+		state = 476
+	}
+}
+
+is_contested = {
+	OR = {
+		is_transsylvania = yes
+		is_hungary_border_state = yes
+		is_dobrudja = yes
+		is_bukovina = yes
+		is_bessarabia = yes
+		is_banat = yes
+		is_slovakia_contested = yes
+		is_zaolzie = yes
+		is_sudetenland = yes
+		is_eastern_prussia = yes
+		is_silesia = yes
+		is_pommerania = yes
+	}
+}
+
+control_East_Germany_1={
+	owns_state = 95
+}
+
+control_East_Germany_2={
+	owns_state = 401
+}

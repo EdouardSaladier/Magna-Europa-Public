@@ -1,0 +1,22 @@
+
+state={
+	id=529
+	name="STATE_529"
+
+	history={
+		owner = GRE
+		add_core_of = GRE
+		buildings = {
+			infrastructure = 5
+
+		}
+
+	}
+
+	provinces={
+		10 3702 4705 5902 5989 10180 16374 16413 16428 16446 16447 
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

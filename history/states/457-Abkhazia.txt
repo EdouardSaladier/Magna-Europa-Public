@@ -1,0 +1,24 @@
+
+state={
+	id=457
+	name="STATE_457"
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = GEO
+		add_core_of = ABK
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		2946 7031 7249 7970 9570 11361 11631 14844 14914 14918 
+	}
+	manpower=192564
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

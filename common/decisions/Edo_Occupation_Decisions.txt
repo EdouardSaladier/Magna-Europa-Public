@@ -1,0 +1,5783 @@
+edo_decisions_occupation = {
+
+	fate_of_hungary  = {
+		visible = {
+			NOT = { ROOT = { is_puppet = yes } }
+			FROM ={
+				105 = {
+					is_owned_and_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.1
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	#######################
+	###Romania Decisions###
+	#######################
+
+	fate_of_romania  = {
+		visible = {
+			NOT = { ROOT = { is_puppet = yes } }
+			FROM ={
+				111 = {
+					is_owned_and_controlled_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.2
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_transslyvania  = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = HUN
+				original_tag = TRA
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			ROOT = { owns_transsylvania = yes }
+			AND = {
+				OR = {
+					WAL = { exists = yes }
+					ROM = { exists = yes }
+				}
+				HUN = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.3
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_transsylvania = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = HUN
+				original_tag = TRA
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			any_owned_state = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NOT = { 518 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_transsylvania = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				518 = {
+					owner = {
+						transfer_state  = PREV.PREV
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_dobrudja  = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = WAL
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			AND = {
+				110 = { is_owned_by = ROOT }
+				365 = { is_owned_by = ROOT }
+			}
+			AND = {
+				OR = {
+					WAL = { exists = yes }
+					ROM = { exists = yes }
+				}
+				BUL = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.6
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_dobrudja = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = WAL
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			110 = { is_owned_by = ROOT }
+			NOT = { 365 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			if = {
+				limit = {
+					BUL = { is_in_faction_with = ROOT }
+					NOT = {
+						ROM = { is_in_faction_with = ROOT }
+						WAL = { is_in_faction_with = ROOT }
+					}
+				}
+				BUL  = {
+					transfer_state  = 110
+				}
+				else = {
+					365 = {
+						owner = {
+							transfer_state  = 110
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_banat  = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = HUN
+				original_tag = TRA
+				original_tag = BNT
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				475 = { is_claimed_by = ROOT }
+				101 = { is_claimed_by = ROOT }
+				239 = { is_owned_by = ROOT }
+			}
+			AND = {
+				475 = { is_owned_by = ROOT }
+				101 = { is_owned_by = ROOT }
+			}
+			AND = {
+				OR = {
+					TRA = { exists = yes }
+					ROM = { exists = yes }
+					YUG = { exists = yes }
+				}
+				HUN = { exists = yes }
+				OR = {
+					TRA = { owns_state = 518 }
+					ROM = { owns_state = 518 }
+					HUN = { owns_state = 518 }
+				}
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.7
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_banat = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = HUN
+				original_tag = TRA
+				original_tag = BNT
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			475 = { is_owned_by = ROOT }
+			NOT = { 101 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			if = {
+				limit = {
+					HUN = { 
+						AND = {
+							is_in_faction_with = ROOT
+							owns_state = 474
+						}
+					}
+					NOT = {
+						ROM = { is_in_faction_with = ROOT }
+						TRA = { is_in_faction_with = ROOT }
+					}
+				}
+				HUN  = {
+					transfer_state  = 475
+				}
+				else = {
+					101 = {
+						owner = {
+							transfer_state  = 475
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_bessarabia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = SOV
+				original_tag = UKR
+				original_tag = MOL
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			112 = { is_owned_by = ROOT }
+			AND = {
+				OR = {
+					MOL = { exists = yes }
+					ROM = { exists = yes }
+				}
+				OR = {
+					SOV = { owns_state = 463 }
+					UKR = { exists = yes }
+				}
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			country_event = {
+				id = edo_occupation_event.8
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_budjak = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = SOV
+				original_tag = UKR
+				original_tag = MOL
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				112 = { is_owned_by = ROOT }
+			}
+			381 = { is_owned_by = ROOT }
+			AND = {
+				OR = {
+					MOL = { exists = yes }
+					ROM = { exists = yes }
+				}
+				OR = {
+					SOV = { owns_state = 463 }
+					UKR = { exists = yes }
+				}
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			country_event = {
+				id = edo_occupation_event.9
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_bucovina = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = SOV
+				original_tag = UKR
+				original_tag = MOL
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			OR = {
+				397 = { is_owned_by = ROOT }
+				604 = { is_owned_by = ROOT }
+				398 = { is_owned_by = ROOT }
+			}
+			NOT = { 237 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_bukovina = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				237 = {
+					owner = {
+						transfer_state  = PREV.PREV
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_bucovina = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = ROM
+				original_tag = SOV
+				original_tag = UKR
+				original_tag = MOL
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				112 = { is_owned_by = ROOT }
+			}
+			397 = { is_owned_by = ROOT }
+			237 = { is_owned_by = ROOT }
+			604 = { is_owned_by = ROOT }
+			AND = {
+				OR = {
+					MOL = { exists = yes }
+					ROM = { exists = yes }
+				}
+				OR = {
+					SOV = { owns_state = 176 }
+					UKR = { exists = yes }
+				}
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			country_event = {
+				id = edo_occupation_event.10
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	##############################
+	###CZECHOSLOVAKIA#############
+	##############################
+	
+	fate_of_czechoslovaka = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				ROOT = { has_country_flag = kill_czecho }
+				original_tag = CZE
+				original_tag = SLO
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			98 = { is_owned_by = ROOT }
+			245 = { is_owned_by = ROOT }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			country_event = {
+				id = edo_occupation_event.11
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_czechia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = CZE
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			98 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { 245 = { is_owned_by = ROOT }  }
+				ROOT = { has_country_flag = kill_czecho }
+				original_tag = SLO
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_central_czechia = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				CZE = { transfer_state  = PREV }
+			}
+			set_variable = { edo_release_target = CZE }
+			edo_scripted_puppet = yes
+			CZE = { 
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = CZE_ONLY
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_sudetenland  = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = AUS
+				original_tag = ROM
+				original_tag = CZE
+				original_tag = HUN
+				original_tag = SDT
+				original_tag = WGR
+				original_tag = DDR
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			ROOT = { owns_sudetenland = yes }
+			AND = {
+				92 = {
+					owner = {
+						OR = {
+							is_german_releasable_tag = yes
+							original_tag = GER
+							original_tag = DDR
+							original_tag = SIL
+							original_tag = WGR
+							original_tag = AUS
+						}
+					}
+				}
+				97 = {
+					owner = {
+						OR = {
+							is_german_releasable_tag = yes
+							original_tag = GER
+							original_tag = DDR
+							original_tag = SIL
+							original_tag = WGR
+							original_tag = AUS
+						}
+					}
+				}
+				424 = {
+					owner = {
+						OR = {
+							is_german_releasable_tag = yes
+							original_tag = GER
+							original_tag = DDR
+							original_tag = SIL
+							original_tag = WGR
+							original_tag = AUS
+							original_tag = POL
+						}
+					}
+				}
+				73 = {
+					owner = {
+						OR = {
+							is_german_releasable_tag = yes
+							original_tag = GER
+							original_tag = DDR
+							original_tag = SIL
+							original_tag = WGR
+							original_tag = AUS
+						}
+					}
+				}
+				CZE = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.12
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_sudetenland = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = AUS
+				original_tag = ROM
+				original_tag = CZE
+				original_tag = HUN
+				original_tag = SDT
+				original_tag = WGR
+				original_tag = DDR
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			any_owned_state = {
+				is_sudetenland = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NOT = { 492 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_sudetenland = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				492 = {
+					owner = {
+						transfer_state  = PREV.PREV
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_slovakia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = CZE
+				original_tag = SLO
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+			}
+			245 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { 98 = { is_owned_by = ROOT }  }
+				ROOT = { has_country_flag = kill_czecho }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_central_slovakia = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				SLO = { transfer_state  = PREV }
+			}
+			set_variable = { edo_release_target = SLO }
+			edo_scripted_puppet = yes
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_south_slovakia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = CZE
+				original_tag = SLO
+				original_tag = HUN
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				243 = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			243 = { is_owned_by = ROOT }
+			AND = {
+				OR = {
+					SLO = { exists = yes }
+					CZE = { 
+						exists = yes
+						owns_state = 245
+					}
+				}
+				HUN = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.14
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_carpatho_ruthenia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = CZE
+				original_tag = SLO
+				original_tag = HUN
+				original_tag = SOV
+				original_tag = UKR
+				original_tag = RUT
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				242 = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			242 = { is_owned_by = ROOT }
+			AND = {
+				OR = {
+					SLO = { exists = yes }
+					CZE = { 
+						exists = yes
+						owns_state = 245
+					}
+				}
+				HUN = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.15
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_south_carpatho_ruthenia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = CZE
+				original_tag = SLO
+				original_tag = HUN
+				original_tag = SOV
+				original_tag = UKR
+				original_tag = RUT
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				242 = { is_owned_by = ROOT }
+				465 = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			465 = { is_owned_by = ROOT }
+			AND = {
+				OR = {
+					SLO = { exists = yes }
+					CZE = { 
+						exists = yes
+						owns_state = 245
+					}
+					RUT = { exists = yes }
+				}
+				HUN = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.16
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_sobrance = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = CZE
+				original_tag = SLO
+				original_tag = HUN
+				original_tag = SOV
+				original_tag = UKR
+				original_tag = RUT
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				242 = { is_owned_by = ROOT }
+				391 = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			391 = { is_owned_by = ROOT }
+			AND = {
+				OR = {
+					SLO = { exists = yes }
+					CZE = { 
+						exists = yes
+						owns_state = 245
+					}
+					RUT = { exists = yes }
+				}
+				HUN = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.17
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_zaolzie = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = CZE
+				original_tag = POL
+				AND = {
+					tag = GER
+					has_government = fascism
+				}
+				277 = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			277 = { is_owned_by = ROOT }
+			AND = {
+				CZE = { exists = yes }
+				POL = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.18
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	######################################
+	###GLOBAL DECISIONS: END OF GERMANY###
+	######################################
+	
+	fate_of_germany  = {
+		visible = {
+			OR = {
+				AND = {
+					is_ai = no
+					has_war_with = GER
+				}
+				AND = {
+					is_ai = no
+					GER = { exists = no }
+					any_owned_state = { is_core_germany = yes }
+				}
+				AND = {
+					every_country = {
+						limit = {
+							is_ai = no
+						}
+						NOT = { has_war_with = GER }
+					}
+					is_faction_leader = yes
+					has_war_with = GER
+				}
+				AND = {
+					every_country = {
+						limit = {
+							is_ai = no
+						}
+						all_owned_state = { is_core_germany = no }
+					}
+					GER = { exists = no }
+					owns_state = 440
+				}
+			}
+			NOT = { has_global_flag = fate_of_germany_decided }
+			OR = { 
+				GER = { surrender_progress > 0.5 }
+				GER = { exists = no }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.23
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_german_stuff = {
+		visible = {
+			owns_german_stuff = yes
+			has_global_flag = germany_occupation_zones
+			GER = { exists = no }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_north_east_germany = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				440 = { owner = { transfer_state  = PREV.PREV } }
+			}
+			every_owned_state = {
+				limit = {
+					is_south_east_germany = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				401 = { owner = { transfer_state  = PREV.PREV } }
+			}
+			every_owned_state = {
+				limit = {
+					is_rheinland = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				511 = { owner = { transfer_state  = PREV.PREV } }
+			}
+			every_owned_state = {
+				limit = {
+					is_westphalia = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				88 = { owner = { transfer_state  = PREV.PREV } }
+			}
+			every_owned_state = {
+				limit = {
+					is_hesse = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				404 = { owner = { transfer_state  = PREV.PREV } }
+			}
+			every_owned_state = {
+				limit = {
+					is_schleswig = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				517 = { owner = { transfer_state  = PREV.PREV } }
+			}
+			every_owned_state = {
+				limit = {
+					is_bavaria = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				92 = { owner = { transfer_state  = PREV.PREV } }
+			}
+			every_owned_state = {
+				limit = {
+					is_baden_wurtemberg = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				87 = { owner = { transfer_state  = PREV.PREV } }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	create_occupations_zone = {
+		visible = {
+			all_country = { owns_german_stuff = no }
+			has_global_flag = germany_occupation_zones
+			AND = {
+				WGR = { exists = no }
+				DDR = { exists = no }
+				GER = { exists = no }
+			}
+			440 = { is_owned_by = ROOT }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			clear_variable = global.east_german_controller
+			clear_variable = global.west_german_controller
+			clear_variable = global.south_german_controller
+			
+			set_variable = { global.east_german_controller  = 440.owner }
+			set_variable = { global.west_german_controller  = 511.owner }
+			set_variable = { global.south_german_controller  = 92.owner }
+			
+			var:global.west_german_controller = { transfer_state  = 95 }
+			
+			every_state = {
+				limit = {
+					is_core_germany = yes
+					NOT = {
+						is_core_of = THIS.owner
+						is_claimed_by = THIS.owner
+					}
+					owner = {
+						AND = {
+							NOT = { original_tag = var:global.west_german_controller }
+							var:global.west_german_controller = { is_in_faction_with = PREV }
+						}
+					}
+				}
+				var:global.west_german_controller = { transfer_state  = PREV }
+			}
+			
+			every_state = {
+				limit = {
+					is_core_germany = yes
+					NOT = {
+						is_core_of = THIS.owner
+						is_claimed_by = THIS.owner
+					}
+					owner = {
+						AND = {
+							NOT = { original_tag = var:global.east_german_controller }
+							var:global.east_german_controller = { is_in_faction_with = PREV }
+						}
+					}
+				}
+				var:global.east_german_controller = { transfer_state  = PREV }
+			}
+			
+			if = {
+				limit = {
+					var:global.east_german_controller = {
+						AND = {
+							owns_state = 517
+							owns_state = 401
+							NOT = { owns_state = 91 }
+						}
+					}
+				}
+				var:global.east_german_controller = { 
+					transfer_state  = 91
+				}
+			}
+			
+			if = {
+				limit = {
+					var:global.east_german_controller = {
+						AND = {
+							OR = {
+								owns_state = 92
+								owns_state = 87
+							}
+							NOT = { owns_state = 401 }
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_westphalia = yes
+							is_baden_wurtemberg = yes
+						}
+					}
+					var:global.west_german_controller = { transfer_state  = PREV }
+				}
+			}
+			if = {
+				limit = {
+					var:global.east_german_controller = {
+						OR = {
+							AND = {
+								owns_state = 88
+								NOT = { owns_state = 404 }
+								NOT = { owns_state = 511 }
+							}
+							AND = {
+								NOT = { owns_state = 88 }
+								owns_state = 404
+								NOT = { owns_state = 511 }
+							}
+							AND = {
+								NOT = { owns_state = 88 }
+								NOT = { owns_state = 404 }
+								owns_state = 511
+							}
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_westphalia = yes
+							is_rheinland = yes
+							is_hesse = yes
+						}
+					}
+					var:global.west_german_controller = { transfer_state  = PREV }
+				}
+			}
+			
+			if = {
+				limit = {
+					var:global.east_german_controller = {
+						OR = {
+							AND = {
+								owns_state = 88
+								owns_state = 404
+								owns_state = 91
+								NOT = { owns_state = 511 }
+							}
+							AND = {
+								NOT = { owns_state = 88 }
+								owns_state = 404
+								owns_state = 511
+								owns_state = 91
+							}
+							AND = {
+								owns_state = 88
+								NOT = { owns_state = 404 }
+								owns_state = 511
+								owns_state = 91
+							}
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_westphalia = yes
+							is_rheinland = yes
+							is_hesse = yes
+						}
+					}
+					var:global.east_german_controller = { transfer_state  = PREV }
+				}
+			}
+			
+			if = {
+				limit = {
+					var:global.east_german_controller = {
+						NOT = { owns_state = 517 }
+					}
+				}
+				var:global.west_german_controller = { 
+					transfer_state  = 78 
+					transfer_state  = 91 
+					transfer_state  = 517 
+				}
+			}
+			
+			if = {
+				limit = {
+					var:global.east_german_controller = {
+						AND = {
+							NOT = {
+								owns_state = 87
+								owns_state = 92
+							}
+							owns_state = 88
+							owns_state = 404
+							owns_state = 511
+							owns_state = 91
+						}
+					}
+				}
+				var:global.south_german_controller = {
+					transfer_state  = 95
+					every_owned_state = {
+						limit = {
+							is_core_germany = yes
+						}
+						WGR = { 
+							transfer_state  = PREV
+							add_state_core = PREV
+						}
+					}
+					set_variable = { edo_release_target = WGR }
+					edo_scripted_puppet = yes
+					WGR = { 
+						transfer_state  = 95
+						add_state_core = 95
+						drop_cosmetic_tag = yes
+						set_cosmetic_tag = GER_SGF
+					}
+				}
+				var:global.east_german_controller = {
+					every_owned_state = {
+						limit = {
+							is_core_germany = yes
+						}
+						DDR = {
+							transfer_state  = PREV
+							add_state_core = PREV
+						}
+					}
+					set_variable = { edo_release_target = DDR }
+					edo_scripted_puppet = yes
+					DDR = { 
+						drop_cosmetic_tag = yes
+						set_cosmetic_tag = GER_NGF
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					var:global.east_german_controller = {
+						AND = {
+							OR = {
+								owns_state = 87
+								owns_state = 92
+							}
+							owns_state = 88
+							owns_state = 404
+							owns_state = 511
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_core_germany = yes
+						}
+					}
+					var:global.east_german_controller = { 
+						transfer_state  = PREV
+					}
+				}
+				var:global.east_german_controller = { 
+					every_owned_state = {
+						limit = {
+							is_core_germany = yes
+						}
+						WGR = { 
+							transfer_state  = PREV
+							add_state_core = PREV
+						}
+					}
+					set_variable = { edo_release_target = WGR }
+					edo_scripted_puppet = yes
+					WGR = { 
+						transfer_state  = 95
+						add_state_core = 95
+						drop_cosmetic_tag = yes
+					}
+				}
+			}
+			if = {
+				limit = { 
+					WGR = { exists = no }
+				}
+				var:global.west_german_controller = {
+					every_owned_state = {
+						limit = {
+							is_core_germany = yes
+						}
+						WGR = { 
+							transfer_state  = PREV
+							add_state_core = PREV
+						}
+					}
+					set_variable = { edo_release_target = WGR }
+					edo_scripted_puppet = yes
+					WGR = { 
+						transfer_state  = 95
+						add_state_core = 95
+						drop_cosmetic_tag = yes
+					}
+				}
+				var:global.east_german_controller = { 
+					every_owned_state = {
+						limit = {
+							is_core_germany = yes
+						}
+						DDR = { 
+							transfer_state  = PREV
+							add_state_core = PREV
+						}
+					}
+					set_variable = { edo_release_target = DDR }
+					edo_scripted_puppet = yes
+					DDR = { 
+						drop_cosmetic_tag = yes
+					}
+				}
+			}
+		}
+	}
+	
+	release_german_releasable = {
+		target_non_existing = yes
+		target_trigger = {
+			FROM = {
+				is_german_releasable_tag = yes
+				capital_scope = { is_owned_by = ROOT }
+			}
+		}
+		
+		visible = {
+			has_global_flag = germany_balkanised
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = GER
+				original_tag = WGR
+				original_tag = DDR
+				is_german_releasable_tag = yes
+			}
+			FROM = {
+				is_german_releasable_tag = yes
+				capital_scope = { is_owned_by = ROOT }
+			}
+        }
+		
+		complete_effect = {
+			FROM = {
+				capital_scope = {
+					FROM = {
+						transfer_state  = PREV
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					NOT = { has_government = democratic }
+					has_dlc = "La Resistance"
+				}
+				puppet = FROM
+			}
+
+			else_if = {
+				limit = {
+					NOT = { has_government = democratic }
+					NOT = { has_dlc = "La Resistance" }
+				}
+				puppet = FROM
+			}	
+
+			else = {
+				FROM = {
+					set_politics = {
+						ruling_party = democratic
+					}
+					add_popularity = {
+						ideology = democratic
+						popularity = 0.5
+					}
+				}
+				if = {
+					limit = {
+						ROOT = { is_in_faction = yes }
+					}
+					random_country = {
+						limit = { 
+							is_faction_leader = yes 
+							is_in_faction_with = ROOT
+						}
+						add_to_faction = FROM
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					puppet = FROM
+					set_autonomy = { target = FROM autonomy_state = autonomy_supervised_state }
+				}
+			}
+		}
+		
+		fire_only_once = no
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	
+	#############
+	###PRUSSIA###
+	#############
+	
+	fate_of_eastern_prussia  = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = GER
+				original_tag = PRE
+				original_tag = WGR
+				original_tag = DDR
+				original_tag = LIT
+				AND = {
+					original_tag = POL
+					NOT = {
+						owns_state = 291
+						owns_state = 290
+						owns_state = 289
+						owns_state = 288
+						owns_state = 283
+					}
+				}
+			}
+			ROOT = { owns_eastern_prussia = yes }
+			POL = { exists = yes }
+			OR = {
+				LIT = { exists = yes }
+				SOV = { 
+					exists = yes
+					owns_state = 108
+				}
+			}
+			OR = {
+				has_global_flag = germany_balkanised
+				WGR = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.19
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_eastern_prussia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = GER
+				original_tag = POL
+				original_tag = PRE
+				original_tag = WGR
+				original_tag = DDR
+				original_tag = LIT
+			}
+			any_owned_state = {
+				is_eastern_prussia = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NOT = { 74 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_eastern_prussia = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				74 = {
+					owner = {
+						transfer_state  = PREV.PREV
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_silesia  = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = GER
+				AND = {
+					original_tag = POL
+					NOT = {
+						owns_state = 291
+						owns_state = 290
+						owns_state = 289
+						owns_state = 288
+						owns_state = 283
+					}
+				}
+				original_tag = SIL
+				original_tag = WGR
+				original_tag = DDR
+			}
+			ROOT = { owns_silesia = yes }
+			POL = { exists = yes }
+			OR = {
+				has_global_flag = germany_balkanised
+				WGR = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.24
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_silesia = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = GER
+				original_tag = POL
+				original_tag = SIL
+				original_tag = WGR
+				original_tag = DDR
+			}
+			any_owned_state = {
+				is_silesia = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NOT = { 282 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_eastern_prussia = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				282 = {
+					owner = {
+						transfer_state  = PREV.PREV
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	fate_of_pommerania  = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = GER
+				AND = {
+					original_tag = POL
+					NOT = {
+						owns_state = 291
+						owns_state = 290
+						owns_state = 289
+						owns_state = 288
+						owns_state = 283
+					}
+				}
+				original_tag = POM
+				original_tag = BRN
+				original_tag = WGR
+				original_tag = DDR
+			}
+			ROOT = { owns_pommerania = yes }
+			POL = { exists = yes }
+			OR = {
+				AND = { 
+					POM = { owns_state = 80 }
+					BRN = { owns_state = 439 }
+				}
+				WGR = { exists = yes }
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			ROOT = {
+				country_event = {
+					id = edo_occupation_event.27
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	give_back_pommerania = {
+		visible = {
+			NOT = { 
+				ROOT = { is_puppet = yes }
+				original_tag = GER
+				original_tag = POL
+				original_tag = POM
+				original_tag = BRN
+				original_tag = WGR
+				original_tag = DDR
+			}
+			any_owned_state = {
+				is_pommerania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			NOT = { 82 = { is_owned_by = ROOT } }
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_pommerania = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				82 = {
+					owner = {
+						transfer_state  = PREV.PREV
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+}
+	
+	# fate_of_belgium  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 48 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# set_variable = { edo_release_target = BEL }
+			# edo_scripted_puppet = yes
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = BEL
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# BEL = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_italy  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 33 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = ITA
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = ITA
+			# }
+			
+			# else = {
+				# ITA = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = ITA
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = ITA
+					# set_autonomy = { target = ITA autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = ITA
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# ITA = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_spain  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 234 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = SPR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = SPR
+			# }
+			
+			# else = {
+				# SPR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = SPR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = SPR
+					# set_autonomy = { target = SPR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = SPR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# SPR = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_portugal  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 165 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = POR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = POR
+			# }
+			
+			# else = {
+				# POR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = POR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = POR
+					# set_autonomy = { target = POR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = POR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# POR = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_luxemburg  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 46 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = LUX
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = LUX
+			# }
+			
+			# else = {
+				# LUX = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = LUX
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = LUX
+					# set_autonomy = { target = LUX autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = LUX
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# LUX = { transfer_state  = PREV }
+			# }
+
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_the_netherlands  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 24 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = HOL
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = HOL
+			# }
+			
+			# else = {
+				# HOL = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = HOL
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = HOL
+					# set_autonomy = { target = HOL autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = HOL
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# HOL = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_switzerland  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 44 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = SWI
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = SWI
+			# }
+			
+			# else = {
+				# SWI = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = SWI
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = SWI
+					# set_autonomy = { target = SWI autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = SWI
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# SWI = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_austria  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 73 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = AUS
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = AUS
+			# }
+			
+			# else = {
+				# AUS = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = AUS
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = AUS
+					# set_autonomy = { target = AUS autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = AUS
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# AUS = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_hungary  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 105 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = HUN
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = HUN
+			# }
+			
+			# else = {
+				# HUN = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = HUN
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = HUN
+					# set_autonomy = { target = HUN autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = HUN
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# HUN = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_czechoslovakia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 98 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = CZE
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = CZE
+			# }
+			
+			# else = {
+				# CZE = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = CZE
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = CZE
+					# set_autonomy = { target = CZE autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = CZE
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# CZE = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_poland  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 279 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = POL
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = POL
+			# }
+			
+			# else = {
+				# POL = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = POL
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = POL
+					# set_autonomy = { target = POL autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = POL
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# POL = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_romania  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 111 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = ROM
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = ROM
+			# }
+			
+			# else = {
+				# ROM = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = ROM
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = ROM
+					# set_autonomy = { target = ROM autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = ROM
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# ROM = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_yugoslavia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# NOT = { ROOT = { original_tag = GER } }
+			# FROM ={
+				# 152 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = YUG
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = YUG
+			# }
+			
+			# else = {
+				# YUG = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = YUG
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = YUG
+					# set_autonomy = { target = YUG autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = YUG
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# YUG = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_bulgaria  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 147 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = BUL
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = BUL
+			# }
+			
+			# else = {
+				# BUL = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = BUL
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = BUL
+					# set_autonomy = { target = BUL autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = BUL
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# BUL = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_greece  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 131 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = GRE
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = GRE
+			# }
+			
+			# else = {
+				# GRE = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = GRE
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = GRE
+					# set_autonomy = { target = GRE autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = GRE
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# GRE = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_albania  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 129 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = SOV
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = ALB
+			# }
+			
+			# else = {
+				# ALB = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = ALB
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = ALB
+					# set_autonomy = { target = ALB autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = ALB
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# ALB = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_turkey  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 254 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = TUR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = TUR
+			# }
+			
+			# else = {
+				# TUR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = TUR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = TUR
+					# set_autonomy = { target = TUR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = TUR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# TUR = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_lithuania  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 109 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = LIT
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = LIT
+			# }
+			
+			# else = {
+				# LIT = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = LIT
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = LIT
+					# set_autonomy = { target = LIT autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = LIT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# LIT = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_latvia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 115 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = LAT
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = LAT
+			# }
+			
+			# else = {
+				# LAT = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = LAT
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = LAT
+					# set_autonomy = { target = LAT autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = LAT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# LAT = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_estonia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 116 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = EST
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = EST
+			# }
+			
+			# else = {
+				# EST = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = EST
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = EST
+					# set_autonomy = { target = EST autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = EST
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# EST = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_denmark  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 27 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = DEN
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = DEN
+			# }
+			
+			# else = {
+				# DEN = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = DEN
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = DEN
+					# set_autonomy = { target = DEN autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = DEN
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# DEN = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_sweden  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 297 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = SWE
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = SWE
+			# }
+			
+			# else = {
+				# SWE = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = SWE
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = SWE
+					# set_autonomy = { target = SWE autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = SWE
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# SWE = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_norway  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 301 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = NOR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = NOR
+			# }
+			
+			# else = {
+				# NOR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = NOR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = NOR
+					# set_autonomy = { target = NOR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = NOR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# NOR = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_finland  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 292 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = FIN
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = FIN
+			# }
+			
+			# else = {
+				# FIN = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = FIN
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = FIN
+					# set_autonomy = { target = FIN autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = FIN
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# FIN = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_ireland  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 22 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = IRE
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = IRE
+			# }
+			
+			# else = {
+				# IRE = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = IRE
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = IRE
+					# set_autonomy = { target = IRE autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = IRE
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# IRE = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_ukraine  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 331 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = UKR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = UKR
+			# }
+			
+			# else = {
+				# UKR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = UKR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = UKR
+					# set_autonomy = { target = UKR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = UKR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# UKR = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_belarus  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 323 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = BLR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = BLR
+			# }
+			
+			# else = {
+				# BLR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = BLR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = BLR
+					# set_autonomy = { target = BLR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = BLR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# BLR = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_georgia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 265 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = GEO
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = GEO
+			# }
+			
+			# else = {
+				# GEO = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = GEO
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = GEO
+					# set_autonomy = { target = GEO autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = GEO
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# GEO = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_armenia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 264 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = ARM
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = ARM
+			# }
+			
+			# else = {
+				# ARM = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = ARM
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = ARM
+					# set_autonomy = { target = ARM autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = ARM
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# ARM = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_azerbaijan  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 203 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = AZB
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = AZR
+			# }
+			
+			# else = {
+				# AZR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = AZR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = AZR
+					# set_autonomy = { target = AZR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = AZR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# AZR = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_kazakhstan  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 322 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = KAZ
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = KAZ
+			# }
+			
+			# else = {
+				# KAZ = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = KAZ
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = KAZ
+					# set_autonomy = { target = KAZ autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = KAZ
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# KAZ = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_persia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 347 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = PER
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = PER
+			# }
+			
+			# else = {
+				# PER = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = PER
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = PER
+					# set_autonomy = { target = PER autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = PER
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# PER = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_iraq  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 145 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = IRQ
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = IRQ
+			# }
+			
+			# else = {
+				# IRQ = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = IRQ
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = IRQ
+					# set_autonomy = { target = IRQ autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = IRQ
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# IRQ = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_arabia  = { # Saudi Arabia, but just in case the peoples puppeting them are not neutral, it will change name
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 312 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = SAU
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = SAU
+			# }
+			
+			# else = {
+				# SAU = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = SAU
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = SAU
+					# set_autonomy = { target = SAU autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = SAU
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# SAU = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_syria  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 343 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = FRA
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = SYR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = SYR
+			# }
+			
+			# else = {
+				# SYR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = SYR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = SYR
+					# set_autonomy = { target = SYR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = SYR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# SYR = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_lebanon  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 20 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = FRA
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = LEB
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = LEB
+			# }
+			
+			# else = {
+				# LEB = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = LEB
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = LEB
+					# set_autonomy = { target = LEB autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = LEB
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# LEB = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_palestine  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 139 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = ENG
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = PAL
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = PAL
+			# }
+			
+			# else = {
+				# PAL = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = PAL
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = PAL
+					# set_autonomy = { target = PAL autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = PAL
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# PAL = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_jordan  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 146 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = ENG
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = JOR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = JOR
+			# }
+			
+			# else = {
+				# JOR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = JOR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = JOR
+					# set_autonomy = { target = JOR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = JOR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# JOR = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_egypt  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 273 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = ENG
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = EGY
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = EGY
+			# }
+			
+			# else = {
+				# EGY = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = EGY
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = EGY
+					# set_autonomy = { target = EGY autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = EGY
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# EGY = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_libya  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 355 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = ITA
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = LBA
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = LBA
+			# }
+			
+			# else = {
+				# LBA = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = LBA
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = LBA
+					# set_autonomy = { target = LBA autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = LBA
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# LBA = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_tunisia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 124 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = FRA
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+			
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = TUN
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = TUN
+			# }
+			
+			# else = {
+				# TUN = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = TUN
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = TUN
+					# set_autonomy = { target = TUN autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = TUN
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# TUN = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_algeria  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 137 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = FRA
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = ALG
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = ALG
+			# }
+			
+			# else = {
+				# ALG = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = ALG
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = ALG
+					# set_autonomy = { target = ALG autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = ALG
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# ALG = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_morocco  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 309 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = FRA
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# original_tag = SPR
+					# NOT = {
+						# has_government = communism
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = MOR
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = MOR
+			# }
+			
+			# else = {
+				# MOR = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = MOR
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = MOR
+					# set_autonomy = { target = MOR autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = MOR
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# MOR = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_britain  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 6 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = ENG
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = ENG
+			# }
+			
+			# else = {
+				# ENG = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = ENG
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = ENG
+					# set_autonomy = { target = ENG autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = ENG
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# ENG = { transfer_state  = PREV }
+			# }
+			
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+
+	# fate_of_russia  = {
+		
+		# visible = {
+			# NOT = { ROOT = { is_puppet = yes } }
+			# FROM ={
+				# 171 = {
+					# is_owned_and_controlled_by = ROOT
+					# NOT = {
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+			# }
+			# NOT = {
+				# AND = {
+					# tag = GER
+					# has_government = fascism
+				# }
+			# }
+		# }
+		
+		# fire_only_once = no
+		
+		# complete_effect = {
+		
+			# if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# has_dlc = "La Resistance"
+				# }
+				# puppet = SOV
+				
+			# }
+			
+			# else_if = {
+				# limit = {
+					# NOT = { has_government = democratic }
+					# NOT = { has_dlc = "La Resistance" }
+				# }
+				# puppet = SOV
+			# }
+			
+			# else = {
+				# SOV = {
+					# set_politics = {
+						# ruling_party = democratic
+					# }
+					# add_popularity = {
+						# ideology = democratic
+						# popularity = 0.5
+					# }
+				# }
+				# if = {
+					# limit = {
+						# ROOT = { is_in_faction = yes }
+					# }
+					# random_country = {
+						# limit = { 
+							# is_faction_leader = yes 
+							# is_in_faction_with = ROOT
+						# }
+						# add_to_faction = SOV
+					# }
+				# }
+				# if = {
+					# limit = {
+						# has_dlc = "Man the Guns"
+					# }
+					# puppet = SOV
+					# set_autonomy = { target = SOV autonomy_state = autonomy_supervised_state }
+				# }
+			# }
+			
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = SOV
+					# NOT = {
+						# is_core_of = ARM
+						# is_core_of = GEO
+						# is_core_of = AZB
+						# is_core_of = LAT
+						# is_core_of = LIT
+						# is_core_of = EST
+						# is_core_of = FIN
+						# is_core_of = POL
+						# is_core_of = BLR
+						# is_core_of = UKR
+						# is_core_of = ROOT
+						# is_claimed_by = ROOT
+					# }
+				# }
+				# SOV = { transfer_state  = PREV }
+			# }
+		# }
+		
+		# ai_will_do = {
+			# factor = 50
+		# }
+	# }
+# }

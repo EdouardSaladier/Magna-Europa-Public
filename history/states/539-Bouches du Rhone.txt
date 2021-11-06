@@ -1,0 +1,36 @@
+
+state={
+	id=539
+	name="STATE_539"
+
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+			dockyard = 3
+			arms_factory = 1
+			fuel_silo = 1
+			air_base = 10
+
+		}
+		victory_points = {
+			19742 1 
+		}
+		victory_points = {
+			5603 1 
+		}
+		victory_points = {
+			20005 20 
+		}
+
+	}
+
+	provinces={
+		5603 8945 8958 9564 19739 19742 19749 19750 19751 19760 20002 20003 20005 
+	}
+	manpower=1224800
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

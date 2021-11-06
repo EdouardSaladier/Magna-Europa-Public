@@ -1,0 +1,28 @@
+
+state={
+	id=478
+	name="STATE_478"
+
+	history={
+		owner = ROM
+		add_core_of = ROM
+		add_core_of = TRA
+		add_core_of = RUT
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			4045 1 
+		}
+
+	}
+
+	provinces={
+		638 4045 7558 7886 9850 10777 14698 
+	}
+	manpower=380000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

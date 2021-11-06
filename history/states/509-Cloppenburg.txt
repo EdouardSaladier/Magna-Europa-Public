@@ -1,0 +1,28 @@
+state={
+	id=509
+	name="STATE_509"
+	provinces={
+		2583 6764 7497 10234 13756 13843 13878 13923 13960 
+	}
+	
+	history={
+		owner = GER
+		add_core_of = GER
+		add_core_of = HAN
+		
+		buildings = {
+			infrastructure = 6
+		}
+		victory_points = {
+			10234 10 
+		}
+		victory_points = {
+			6764 15 
+		}
+
+	}
+	
+	manpower=494032
+	buildings_max_level_factor=1.000
+	state_category=city
+}

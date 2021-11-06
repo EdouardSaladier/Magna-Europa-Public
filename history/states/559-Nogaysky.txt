@@ -1,0 +1,23 @@
+
+state={
+	id=559
+	name="STATE_559"
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = NOG
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		671 969 1911 2124 2697 3942 8385 8462 8698 8700 9017 9415 9943 10830 14221 14249 14262 14291 14294 14343 17311 17312 
+	}
+	manpower=77116
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

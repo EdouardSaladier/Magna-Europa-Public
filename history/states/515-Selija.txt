@@ -1,0 +1,25 @@
+state={
+	id=515
+	name="STATE_515"
+	provinces={
+		2349 3896 7111 7724 8425 9643 10193 10748 13017 13026 13038 13057 
+	}
+	
+	history={
+		owner = LAT
+		add_core_of = LAT
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			13057 10 
+		}
+
+	}
+	
+	manpower=456150
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

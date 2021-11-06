@@ -1,0 +1,59 @@
+
+state={
+	id=266
+	name="STATE_266"
+	resources={
+		tungsten=26.000
+		oil=18.000
+	}
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = KRA
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			7634 = {
+				naval_base = 3
+
+			}
+
+		}
+		victory_points = {
+			1861 5 
+		}
+		victory_points = {
+			3797 1 
+		}
+		victory_points = {
+			7634 1 
+		}
+		victory_points = {
+			14872 1 
+		}
+		victory_points = {
+			8941 1 
+		}
+		victory_points = {
+			9152 1 
+		}
+		victory_points = {
+			11249 1 
+		}
+		victory_points = {
+			8027 1 
+		}
+		victory_points = {
+			14585 5 
+		}
+
+	}
+
+	provinces={
+		123 170 416 805 855 1282 1845 1861 1889 1941 2218 2557 3163 3185 3743 3797 4169 4345 4598 4838 5232 5342 5353 5507 5846 5899 5914 6019 6027 6083 6328 6623 6807 7094 7466 7596 7631 7634 7664 7701 7862 7883 7913 7933 8013 8027 8170 8941 9152 9386 9455 9457 9553 9598 9696 9716 9798 10259 10266 10475 10920 11249 11332 11449 11576 14246 14272 14289 14293 14302 14308 14315 14320 14365 14379 14380 14392 14401 14495 14496 14497 14585 14594 14620 14640 14668 14677 14684 14685 14686 14700 14727 14728 14749 14768 14779 14826 14872 
+	}
+	manpower=2903371
+	buildings_max_level_factor=1.000
+	state_category=city
+}

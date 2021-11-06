@@ -1,0 +1,29 @@
+state={
+	id=602
+	name="STATE_602"
+
+	history={
+		owner = YUG
+		add_core_of = YUG
+		add_core_of = BOS
+		add_core_of = HRZ
+		add_claim_by = CRO
+		add_claim_by = SRP
+		add_claim_by = SER
+		buildings = {
+			infrastructure = 5
+
+		}
+		victory_points = {
+			15665 10 
+		}
+
+	}
+
+	provinces={
+		635 2194 5910 15665 15680 20082 20086 20087 
+	}
+	manpower=150503
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

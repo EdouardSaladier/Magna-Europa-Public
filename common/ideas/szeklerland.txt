@@ -1,0 +1,348 @@
+ideas = {
+
+	political_advisor = {
+
+		mihaly_szasz = {
+
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { backroom_backstabber }
+		}
+
+		zoltan_hargitai = {
+
+			picture = generic_political_advisor_europe_3
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { captain_of_industry }
+		}
+
+		miklos_szekely = {
+
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { war_industrialist }
+		}
+
+		gyula_bathori = {
+
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { quartermaster_general }
+		}
+
+		lajos_ferenczy = {
+
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { silent_workhorse }
+		}
+
+		karoly_ozsvath = {
+
+			picture = generic_political_advisor_europe_3
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { compassionate_gentleman }
+		}
+
+		andras_apponyi = {
+			
+			picture = idea_generic_communist_europe
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { communist_revolutionary }
+		}
+
+		tamas_erdo = {
+			
+			picture = idea_generic_democratic_europe
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { democratic_reformer }
+		}
+
+		jozsef_fogarassi = {
+			
+			picture = idea_generic_fascist_europe
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { fascist_demagogue }
+		}
+	}
+
+
+	# MILITARY
+
+	army_chief = {
+		
+
+		geza_marosi = {
+			
+			picture = generic_army_europe_3
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		bela_andrassy = {
+			
+			picture = generic_army_europe_1
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+		
+
+		imre_biro = {
+			
+			picture = generic_air_europe_3
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { air_chief_ground_support_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		peter_bereczki = {
+			
+			picture = generic_air_europe_2
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+		
+
+		gabor_szekely = {
+			
+			picture = generic_navy_europe_2
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { navy_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		antal_molnar = {
+			
+			picture = generic_navy_europe_3
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { navy_chief_maneuver_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	high_command = {
+
+		sandor_kalman = {
+			ledger = army
+			
+			picture = generic_army_europe_3
+
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { army_artillery_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		tibor_lazar = {
+			ledger = army
+			
+			picture = generic_army_europe_2
+
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		istvan_keresztesi = {
+			ledger = army
+			
+			picture = generic_army_europe_1
+
+			allowed = {
+				original_tag = SZE
+			}
+			
+
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+		jeno_farkas = {
+			ledger = air
+			
+			picture = generic_air_europe_3
+
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { air_airborne_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		arpad_nagy = {
+			ledger = army
+
+			picture = generic_army_europe_2
+
+			allowed = {
+				original_tag = SZE
+			}
+			
+			traits = { army_entrenchment_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+	}
+	
+	theorist = {
+		gyorgy_hajdu = {
+			ledger = army
+		
+			picture = generic_army_europe_3
+
+			allowed = {
+				original_tag = SZE
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}
+		
+		janos_varga = {
+			ledger = air
+
+			picture = generic_air_europe_3
+			
+			allowed = {
+				original_tag = SZE
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+
+	}
+	
+}

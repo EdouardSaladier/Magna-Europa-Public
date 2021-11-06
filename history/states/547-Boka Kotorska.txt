@@ -1,0 +1,28 @@
+state={
+	id=547
+	name="STATE_547"
+
+	history={
+		owner = YUG
+		add_core_of = YUG
+		add_core_of = MNT
+		buildings = {
+			infrastructure = 3
+			15847 = {
+				naval_base = 5
+			}
+
+		}
+		victory_points = {
+			15847 5 
+		}
+
+	}
+
+	provinces={
+		15847 
+	}
+	manpower=142100
+	buildings_max_level_factor=1.000
+	state_category=enclave
+}

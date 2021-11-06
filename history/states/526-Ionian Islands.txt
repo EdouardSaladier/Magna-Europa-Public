@@ -1,0 +1,26 @@
+state={
+	id=526
+	name="STATE_526"
+
+	history={
+		owner = GRE
+		add_core_of = GRE
+		buildings = {
+			infrastructure = 4
+
+		}
+		victory_points = {
+			11528 1 
+		}
+		victory_points = {
+			16311 1 
+		}
+
+}
+	provinces={
+		1047 6508 11528 16311 17356 17362 
+	}
+	manpower=214300
+	buildings_max_level_factor=1.000
+	state_category=small_island
+}

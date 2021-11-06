@@ -1,0 +1,67 @@
+
+state={
+	id=78
+	name="STATE_78"
+
+	history={
+		owner = GER
+		add_core_of = GER
+		add_core_of = HLS
+		
+		buildings = {
+			infrastructure = 6
+			arms_factory = 1
+			dockyard = 4
+			air_base = 5
+			2071 = {
+				naval_base = 8
+
+			}
+
+		}
+		victory_points = {
+			318 3 
+		}
+		victory_points = {
+			4546 1 
+		}
+		victory_points = {
+			13469 5 
+		}
+		victory_points = {
+			19471 3 
+		}
+		victory_points = {
+			13484 1 
+		}
+		victory_points = {
+			11499 1 
+		}
+		victory_points = {
+			10936 40 
+		}
+		victory_points = {
+			7266 1 
+		}
+		victory_points = {
+			13574 1 
+		}
+		victory_points = {
+			2616 1 
+		}
+		victory_points = {
+			13479 5 
+		}
+		victory_points = {
+			10873 1 
+		}
+
+	}
+
+	provinces={
+		318 2071 2616 3351 4546 5885 7266 8811 10873 11411 11499 13469 13470 13479 13483 13484 13512 13530 13574 19471 
+	}
+	manpower=2111297
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

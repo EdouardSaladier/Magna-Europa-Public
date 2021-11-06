@@ -1,0 +1,14 @@
+on_actions = {
+	
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { OR = { original_tag = POL original_tag = DZG } }
+					tag = GER
+				}
+				annex_country = { target = DZG transfer_troops = yes }
+			}
+		}
+	}
+}

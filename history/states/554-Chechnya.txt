@@ -1,0 +1,24 @@
+
+state={
+	id=554
+	name="STATE_554"
+	
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = CCN
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+	
+	provinces={
+		76 1535 3874 6582 6823 7259 8669 9363 9533 11542 14362 14409 14415 14422 14428 14446 14451 14502 14530 14665 
+	}
+	
+	manpower=592889
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

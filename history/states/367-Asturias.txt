@@ -1,0 +1,31 @@
+
+state={
+	id=367
+	name="STATE_367"
+
+	history={
+		owner = SPR
+		add_core_of = SPR
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+			arms_factory = 1
+			1190 = {
+				naval_base = 2
+
+			}
+
+		}
+		victory_points = {
+			15522 1 
+		}
+
+	}
+
+	provinces={
+		228 1190 2612 3784 5084 5291 7521 9027 9235 9730 10376 11232 15522 15551 15574 
+	}
+	manpower=817172
+	buildings_max_level_factor=1.000
+	state_category=town
+}

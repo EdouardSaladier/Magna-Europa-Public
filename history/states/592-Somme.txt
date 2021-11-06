@@ -1,0 +1,21 @@
+state={
+	id=592
+	name="STATE_592"
+	provinces={
+		2526 5803 7211 11050 11356 14284 
+	}
+	
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 6
+
+		}
+
+	}
+	
+	manpower=467500
+	buildings_max_level_factor=1.000
+	state_category=town
+}

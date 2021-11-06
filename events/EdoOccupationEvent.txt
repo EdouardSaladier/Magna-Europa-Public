@@ -1,0 +1,2993 @@
+﻿###########################
+# Edo Events
+###########################
+
+add_namespace = edo_occupation_event
+
+country_event = { #Hungary Occupation Event
+	id = edo_occupation_event.1
+	title = edo_occupation_event.1.t
+	desc = edo_occupation_event.1.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	
+	option = {
+		name = edo_occupation_event.1.a
+		
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = { #If Little Entente in the root faction, then more chance to get small Hungary
+				factor = 2
+				AND = {
+					is_in_faction_with = CZE
+					is_in_faction_with = ROM
+					is_in_faction_with = YUG
+				}
+			}
+			modifier = { #If is CZE/ROM/YUG, even more chance to get small Hungary
+				factor = 2
+				OR = {
+					original_tag = CZE
+					original_tag = ROM
+					original_tag = YUG
+				}
+			}
+		}
+		
+		set_variable = { edo_release_target = HUN }
+		edo_scripted_puppet = yes
+		
+		every_owned_state = {
+			limit = {
+				is_small_hungary = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = { transfer_state  = PREV }
+		}
+		
+		if = {
+			limit = {
+				owns_state = 443
+			}
+			243 = {
+				owner = {
+					transfer_state  = 443
+				}
+			}
+		}
+		243 = {
+			owner = {
+				if = {
+					limit = {
+						243 = { 
+							OR = {
+								is_core_of = PREV
+								is_claimed_by = PREV
+							}
+						}
+					}
+					add_state_claim = 443
+					else = {
+						443 = {
+							set_state_flag = not_to_give_away
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owns_state = 104
+			}
+			472 = {
+				owner = {
+					transfer_state  = 104
+				}
+			}
+		}
+		472 = {
+			owner = {
+				if = {
+					limit = {
+						472 = { 
+							OR = {
+								is_core_of = PREV
+								is_claimed_by = PREV
+							}
+						}
+					}
+					add_state_claim = 104
+					else = {
+						104 = {
+							set_state_flag = not_to_give_away
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owns_state = 501
+			}
+			474 = {
+				owner = {
+					transfer_state  = 501
+				}
+			}
+		}
+		474 = {
+			owner = {
+				if = {
+					limit = {
+						474 = { 
+							OR = {
+								is_core_of = PREV
+								is_claimed_by = PREV
+							}
+						}
+					}
+					add_state_claim = 501
+					else = {
+						501 = {
+							set_state_flag = not_to_give_away
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owns_state = 491
+			}
+			399 = {
+				owner = {
+					transfer_state  = 491
+				}
+			}
+		}
+		399 = {
+			owner = {
+				if = {
+					limit = {
+						399 = { 
+							OR = {
+								is_core_of = PREV
+								is_claimed_by = PREV
+							}
+						}
+					}
+					add_state_claim = 491
+					else = {
+						491 = {
+							set_state_flag = not_to_give_away
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				owns_state = 442
+			}
+			159 = {
+				owner = {
+					transfer_state  = 442
+				}
+			}
+		}
+		159 = {
+			owner = {
+				if = {
+					limit = {
+						159 = { 
+							OR = {
+								is_core_of = PREV
+								is_claimed_by = PREV
+							}
+						}
+					}
+					add_state_claim = 442
+					else = {
+						442 = {
+							set_state_flag = not_to_give_away
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.1.b #Normal Hungary
+		#It can gain territory in other peace conference
+		ai_chance = { 
+			factor = 50
+		}
+		
+		set_variable = { edo_release_target = HUN }
+		edo_scripted_puppet = yes
+		
+		every_owned_state = {
+			limit = {
+				is_core_hungary = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = { transfer_state  = PREV }
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				has_state_flag = not_to_give_away
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = { 
+				transfer_state  = PREV 
+				add_state_claim = PREV
+			}
+			clr_state_flag = not_to_give_away
+		}
+	}
+}
+
+country_event = { #Romania Occupation Event
+	id = edo_occupation_event.2
+	title = edo_occupation_event.2.t
+	desc = edo_occupation_event.2.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	
+	option = {
+		name = edo_occupation_event.2.a #Romania undivided
+		
+		ai_chance = { 
+			factor = 50
+		}
+		
+		set_variable = { edo_release_target = ROM }
+		edo_scripted_puppet = yes
+		
+		every_owned_state = {
+			limit = {
+				is_small_romania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			ROM = { transfer_state  = PREV }
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.2.b #Break Romania
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		WAL = { transfer_state  = 111 }
+		if = {
+			limit = {
+				owns_state = 444
+			}
+			WAL = { transfer_state  = 444 }
+		}
+		
+		set_variable = { edo_release_target = WAL }
+		edo_scripted_puppet = yes
+		
+		if = {
+			limit = {
+				owns_state = 236
+			}
+			MOL = { transfer_state  = 236 }
+			set_variable = { edo_release_target = MOL }
+			edo_scripted_puppet = yes
+		}
+		
+		if = {
+			limit = {
+				owns_state = 398
+			}
+			MOL = { transfer_state  = 398 }
+		}
+	}
+}
+
+country_event = { #Romania Occupation Event - Transsylvania
+	id = edo_occupation_event.3
+	title = edo_occupation_event.3.t
+	desc = edo_occupation_event.3.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.3" }
+	
+	option = {
+		name = edo_occupation_event.3.a #Transsylvania as part of Romania - Available only if Romania is united
+		trigger = {
+			NOT = {
+				OR = {
+					WAL = { exists = yes }
+					MOL = { exists = yes }
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.4
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.3.b #Independant Transsylvania, 50% chance except in historical mode (if Romania wasn't split by player)
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					NOT = {
+						OR = {
+							WAL = { exists = yes }
+							MOL = { exists = yes }
+						}
+					}
+				}
+			}
+		}
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.5
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.3.c #Hungarian Transsylvania
+		trigger = {
+			NOT = {
+				OR = {
+					501 = {
+						has_state_flag = not_to_give_away
+					}
+					104 = {
+						has_state_flag = not_to_give_away
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = { transfer_state  = PREV }
+		}
+		
+	}
+}
+
+country_event = { #Romania Occupation Event - Romanian Transsylvania
+	id = edo_occupation_event.4
+	title = edo_occupation_event.4.t
+	desc = edo_occupation_event.4.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.4" }
+	
+	option = {
+		name = edo_occupation_event.4.a #All Transsylvania for Romania
+
+		ai_chance = { 
+			factor = 50
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			ROM = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		
+		if = {
+			limit = {
+				501 = {
+					has_state_flag = not_to_give_away
+				}
+			}
+			ROM = { 
+				transfer_state  = 501
+				add_state_claim = 501
+			}
+			501 = { clr_state_flag = not_to_give_away }
+		}
+		
+		if = {
+			limit = {
+				104 = {
+					has_state_flag = not_to_give_away
+				}
+			}
+			ROM = { 
+				transfer_state  = 104
+				add_state_claim = 104
+			}
+			104 = { clr_state_flag = not_to_give_away }
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.4.b #Border for Hungary, Rest for Romania
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		trigger = {
+			NOT = {
+				OR = {
+					501 = {
+						has_state_flag = not_to_give_away
+					}
+					104 = {
+						has_state_flag = not_to_give_away
+					}
+				}
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_romanian_hungary_border_state = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = {
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					is_romanian_hungary_border_state = yes
+				}
+			}
+			clr_state_flag = not_to_give_away
+			ROM = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.4.c #North Transylvania for Hungary, Rest for Romania
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		trigger = {
+			NOT = {
+				OR = {
+					501 = {
+						has_state_flag = not_to_give_away
+					}
+					104 = {
+						has_state_flag = not_to_give_away
+					}
+				}
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_north_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = {
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					is_north_transsylvania = yes
+				}
+			}
+			clr_state_flag = not_to_give_away
+			ROM = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.4.d #Middle Transylvania for Hungary
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		trigger = {
+			NOT = {
+				OR = {
+					501 = {
+						has_state_flag = not_to_give_away
+					}
+					104 = {
+						has_state_flag = not_to_give_away
+					}
+				}
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_middle_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = {
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					is_middle_transsylvania = yes
+				}
+			}
+			ROM = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Romania Occupation Event - Independant Transsylvania
+	id = edo_occupation_event.5
+	title = edo_occupation_event.5.t
+	desc = edo_occupation_event.5.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.5" }
+	
+	option = {
+		name = edo_occupation_event.5.a #All Transsylvania Independant
+		trigger = {
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			TRA = {
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		set_variable = { edo_release_target = TRA }
+		edo_scripted_puppet = yes
+		
+		if = {
+			limit = {
+				501 = {
+					has_state_flag = not_to_give_away
+				}
+			}
+			TRA = { 
+				transfer_state  = 501
+				add_state_claim = 501
+			}
+			501 = { clr_state_flag = not_to_give_away }
+		}
+		
+		if = {
+			limit = {
+				104 = {
+					has_state_flag = not_to_give_away
+				}
+			}
+			TRA = { 
+				transfer_state  = 104
+				add_state_claim = 104
+			}
+			104 = { clr_state_flag = not_to_give_away }
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.5.b #Border for Hungary, Rest Independant
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		trigger = {
+			NOT = {
+				OR = {
+					501 = {
+						has_state_flag = not_to_give_away
+					}
+					104 = {
+						has_state_flag = not_to_give_away
+					}
+				}
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_romanian_hungary_border_state = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = {
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					is_romanian_hungary_border_state = yes
+				}
+			}
+			clr_state_flag = not_to_give_away
+			TRA = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		set_variable = { edo_release_target = TRA }
+		edo_scripted_puppet = yes
+	}
+	
+	option = {
+		name = edo_occupation_event.5.c #North Transylvania for Hungary, Rest Independant
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		trigger = {
+			NOT = {
+				OR = {
+					501 = {
+						has_state_flag = not_to_give_away
+					}
+					104 = {
+						has_state_flag = not_to_give_away
+					}
+				}
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_north_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					is_north_transsylvania = yes
+				}
+			}
+			clr_state_flag = not_to_give_away
+			TRA = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		set_variable = { edo_release_target = TRA }
+		edo_scripted_puppet = yes
+	}
+	
+	option = {
+		name = edo_occupation_event.5.d #Middle Transylvania for Hungary
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		trigger = {
+			NOT = {
+				OR = {
+					501 = {
+						has_state_flag = not_to_give_away
+					}
+					104 = {
+						has_state_flag = not_to_give_away
+					}
+				}
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_middle_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			HUN = { 
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_transsylvania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					is_middle_transsylvania = yes
+				}
+			}
+			TRA = {
+				transfer_state  = PREV
+				add_state_claim = PREV
+			}
+		}
+	}
+}
+
+country_event = { #Romania Occupation Event - Dobrudja
+	id = edo_occupation_event.6
+	title = edo_occupation_event.6.t
+	desc = edo_occupation_event.6.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.6" }
+	
+	option = {
+		name = edo_occupation_event.6.a #
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		BUL = { 
+			transfer_state  = 110
+			add_state_claim = 110
+			transfer_state  = 365
+			add_state_claim = 365
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.6.b #Romania exist, split in two Dobrudja
+		trigger = {
+			WAL = { exists = no }
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		BUL = { 
+			transfer_state  = 110
+			add_state_claim = 110
+		}
+		ROM = {
+			transfer_state  = 365
+			add_state_claim = 365
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.6.c #Wallachia exist, split in two Dobrudja
+		trigger = {
+			WAL = { exists = yes }
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		BUL = { 
+			transfer_state  = 110
+			add_state_claim = 110
+		}
+		WAL = {
+			transfer_state  = 365
+			add_state_claim = 365
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.6.d #Romania exist, gets all Dobrudja
+		trigger = {
+			WAL = { exists = no }
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		ROM = { 
+			transfer_state  = 110
+			add_state_claim = 110
+			transfer_state  = 365
+			add_state_claim = 365
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.6.e #Wallachia exist, gets all Dobrudja
+		trigger = {
+			WAL = { exists = yes }
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		WAL = { 
+			transfer_state  = 110
+			add_state_claim = 110
+			transfer_state  = 365
+			add_state_claim = 365
+		}
+	}
+}
+
+country_event = { #Romania Occupation Event - Banat
+	id = edo_occupation_event.7
+	title = edo_occupation_event.7.t
+	desc = edo_occupation_event.7.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.7" }
+	
+	option = {
+		name = edo_occupation_event.7.a #
+		trigger = { #Hungary can only get Banat if it doesn't make border gore.
+			HUN = { owns_state = 238 }
+		}
+		ai_chance = { 
+			factor = 5000
+			modifier = {
+				factor = 0
+				OR = { 
+					is_historical_focus_on = yes
+					original_tag = YUG
+				}
+			}
+		}
+		HUN = { 
+			transfer_state  = 101
+			add_state_claim = 101
+			transfer_state  = 475
+			add_state_claim = 475
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.7.b #Romania exist, split in two Banat
+		trigger = {
+			TRA = { exists = no }
+			ROM = { exists = yes }
+			NOT = {
+				ROM = { owns_state = 474 }
+				HUN = { owns_state = 238 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		HUN = { 
+			transfer_state  = 475
+			add_state_claim = 475
+		}
+		ROM = {
+			transfer_state  = 101
+			add_state_claim = 101
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.7.c #Transylvania exist, split in two Banat
+		trigger = {
+			TRA = { exists = yes }
+			NOT = {
+				TRA = { owns_state = 474 }
+				HUN = { owns_state = 238 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		HUN = { 
+			transfer_state  = 475
+			add_state_claim = 475
+		}
+		TRA = {
+			transfer_state  = 101
+			add_state_claim = 101
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.7.d #Romania exist, gets all Banat
+		trigger = {
+			TRA = { exists = no }
+			ROM = { exists = yes }
+			NOT = {
+				HUN = { owns_state = 238 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		ROM = { 
+			transfer_state  = 101
+			add_state_claim = 101
+			transfer_state  = 475
+			add_state_claim = 475
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.7.e #Transylvania exist, gets all Banat
+		trigger = {
+			TRA = { exists = yes }
+			NOT = {
+				HUN = { owns_state = 238 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		TRA = { 
+			transfer_state  = 101
+			add_state_claim = 101
+			transfer_state  = 475
+			add_state_claim = 475
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.7.f #Yugoslavia owns Banat, will keep it all
+		trigger = {
+			original_tag = YUG
+		}
+		ai_chance = { 
+			factor = 5000
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		YUG = { 
+			add_state_claim = 101
+			add_state_claim = 475
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.7.f #Independant Banat
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		BNT = { 
+			transfer_state  = 101
+			add_state_claim = 101
+			transfer_state  = 475
+			add_state_claim = 475
+		}
+		set_variable = { edo_release_target = BNT }
+		edo_scripted_puppet = yes
+	}
+}
+
+country_event = { #Romania Occupation Event - Bessarabia
+	id = edo_occupation_event.8
+	title = edo_occupation_event.8.t
+	desc = edo_occupation_event.8.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.8" }
+	
+	option = {
+		name = edo_occupation_event.8.a #Bessarabia to Romania
+		trigger = {
+			ROM = { exists = yes }
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		ROM = { 
+			transfer_state  = 112
+			add_state_claim = 112
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.8.b #Bessarabia to Soviet Union/Ukraine
+		ai_chance = { 
+			factor = 50
+		}
+		if = {
+			limit = {
+				UKR = { exists = yes }
+			}
+			UKR = { 
+				transfer_state  = 112
+				add_state_claim = 112
+			}
+		}
+		else = {
+			SOV = { 
+				transfer_state  = 112
+				add_state_claim = 112
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.8.c #Bessarabia to Moldova
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		if = {
+			limit = {
+				MOL = { exists = yes }
+			}
+			MOL = { 
+				transfer_state  = 112
+				add_state_claim = 112
+			}
+		}
+		else = {
+			MOL = {
+				transfer_state  = 112
+				add_state_claim = 112
+			}
+			set_variable = { edo_release_target = MOL }
+			edo_scripted_puppet = yes
+		}
+	}
+}
+
+country_event = { #Romania Occupation Event - Budjak
+	id = edo_occupation_event.9
+	title = edo_occupation_event.9.t
+	desc = edo_occupation_event.9.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.9" }
+	
+	option = {
+		name = edo_occupation_event.9.a #Budjak to Romania
+		trigger = {
+			ROM = { owns_state = 112 }
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		ROM = { 
+			transfer_state  = 381
+			add_state_claim = 381
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.9.b #Budjak to Soviet Union/Ukraine
+		ai_chance = { 
+			factor = 50
+		}
+		if = {
+			limit = {
+				UKR = { exists = yes }
+			}
+			UKR = { 
+				transfer_state  = 381
+				add_state_claim = 381
+			}
+		}
+		else = {
+			SOV = { 
+				transfer_state  = 381
+				add_state_claim = 381
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.9.c #Bessarabia to Moldova
+		trigger = {
+			MOL = { owns_state = 112 } 
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		MOL = { 
+			transfer_state  = 381
+			add_state_claim = 381
+		}
+	}
+}
+
+country_event = { #Romania Occupation Event - Bocovina
+	id = edo_occupation_event.10
+	title = edo_occupation_event.10.t
+	desc = edo_occupation_event.10.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.10" }
+	
+	option = {
+		name = edo_occupation_event.10.a #Everything to Romania/Moldavia
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		if = {
+			limit = {
+				ROM = { exists = yes }
+			}
+			ROM = { 
+				transfer_state  = 237
+				add_state_claim = 237
+				transfer_state  = 604
+				add_state_claim = 604
+			}
+		}
+		else = {
+			MOL = { 
+				transfer_state  = 237
+				add_state_claim = 237
+				transfer_state  = 604
+				add_state_claim = 604
+			}
+		}
+		112 = {
+			owner = {
+				transfer_state  = 397
+				add_state_claim = 397
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.10.b #Historical stuff to Soviet Union/Ukraine
+		trigger = { 
+			OR = {
+				SOV = { owns_state = 283 } 
+				UKR = { owns_state = 283 } 
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		if = {
+			limit = {
+				UKR = { exists = yes }
+			}
+			UKR = { 
+				transfer_state  = 237
+				add_state_claim = 237
+				transfer_state  = 604
+				add_state_claim = 604
+			}
+		}
+		else = {
+			SOV = { 
+				transfer_state  = 237
+				add_state_claim = 237
+				transfer_state  = 604
+				add_state_claim = 604
+			}
+		}
+		112 = {
+			owner = {
+				transfer_state  = 397
+				add_state_claim = 397
+			}
+		}
+	}
+}
+
+####################
+###CZECHOSLOVAKIA###
+####################
+
+country_event = { #Fate of Czechoslovakia
+	id = edo_occupation_event.11
+	title = edo_occupation_event.11.t
+	desc = edo_occupation_event.11.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.11" }
+	
+	option = {
+		name = edo_occupation_event.11.a #Divide Czechoslovakia
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		ROOT = { set_country_flag = kill_czecho }
+		every_owned_state = {
+			limit = {
+				is_slovakia = yes
+			}
+			remove_core_of = CZE
+		}
+	}
+	option = {
+		name = edo_occupation_event.11.b #Keep Czechoslovakia alive
+		ai_chance = { 
+			factor = 50
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_core_czecho = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			CZE = { transfer_state  = PREV }
+		}
+		
+		set_variable = { edo_release_target = CZE }
+		edo_scripted_puppet = yes
+	}
+}
+
+country_event = { #Fate of Sudetenland
+	id = edo_occupation_event.12
+	title = edo_occupation_event.12.t
+	desc = edo_occupation_event.12.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.12" }
+	
+	option = {
+		name = edo_occupation_event.12.a #Sudetenland to Czechia/Czechoslovakia, Germans get Benes'ed
+		ai_chance = { 
+			factor = 50
+		}
+		every_owned_state = {
+			limit = {
+				is_sudetenland = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			CZE = { transfer_state  = PREV }
+			add_core_of = CZE
+			remove_core_of = GER
+			remove_core_of = SDT
+		}
+	}
+	option = {
+		name = edo_occupation_event.12.b #Sudetenland to Czechia/Czechoslovakia, change of status to give representation to Sudeten
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_sudetenland = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			CZE = { transfer_state  = PREV }
+			add_core_of = CZE
+			remove_core_of = GER
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 245 } #If Czechoslovakia
+			}
+			CZE = { 
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = CZE_SLO_SUDET
+			}
+		}
+		else = {
+			CZE = { 
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = CZE_SUDET
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.12.c #Independant Sudetenland
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_sudetenland = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			SDT = { transfer_state  = PREV }
+		}
+		set_variable = { edo_release_target = SDT }
+		edo_scripted_puppet = yes
+	}
+	
+	option = {
+		name = edo_occupation_event.12.d #Sudetenland to German States
+		trigger = {
+			AUS = { exists = yes }
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.13
+			}
+		}
+	}
+	
+}
+
+country_event = { #Fate of Sudetenland - German options
+	id = edo_occupation_event.13
+	title = edo_occupation_event.13.t
+	desc = edo_occupation_event.13.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.13" }
+	
+	option = {
+		name = edo_occupation_event.13.a #Sudetenland to Austria
+		trigger = {
+			AUS = { exists = yes }
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 50
+				original_tag = AUS
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_sudetenland = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			AUS = { transfer_state  = PREV }
+			add_core_of = AUS
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.13.b #Sudetenland to Germany
+		trigger = {
+			GER = { exists = yes }
+			AUS = { exists = no }
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 50
+				original_tag = GER
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_sudetenland = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			GER = { transfer_state  = PREV }
+			add_core_of = GER
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.13.c #Sudetenland to German states
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		if = { #If Austria exists, we give it the South Sudetenland
+			limit = {
+				AUS = { exists = yes }
+			}
+			every_owned_state = {
+				limit = {
+					is_south_sudetenland = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				AUS = { transfer_state  = PREV }
+				add_core_of = AUS
+			}
+		}
+		if = { #If Germany exist, then DDR and WGR don't, and we give Germany the rest
+			limit = {
+				GER = { exists = yes }
+			}
+			every_owned_state = {
+				limit = {
+					is_sudetenland = yes
+					NOT = {
+						is_core_of = ROOT
+						is_claimed_by = ROOT
+					}
+				}
+				GER = { transfer_state  = PREV }
+				add_core_of = GER
+			}
+		}
+		# Now, no idea who owns what, I suppose DDR, WGR both exists, so we give them whathever is near them, hopefully there won't be too much border gore
+		if = {
+			limit = {
+				493 = { is_owned_by = ROOT }
+			}
+			92 = {
+				owner = {
+					transfer_state  = 493
+					add_state_claim = 493
+				}
+			}
+		}
+		if = {
+			limit = {
+				492 = { is_owned_by = ROOT }
+			}
+			97 = {
+				owner = {
+					transfer_state  = 492
+					add_state_claim = 492
+				}
+			}
+		}
+		if = {
+			limit = {
+				85 = { is_owned_by = ROOT }
+			}
+			97 = {
+				owner = {
+					transfer_state  = 85
+					add_state_claim = 85
+				}
+			}
+		}
+		if = {
+			limit = {
+				247 = { is_owned_by = ROOT }
+			}
+			424 = {
+				owner = {
+					transfer_state  = 247
+					add_state_claim = 247
+				}
+			}
+		}
+		if = {
+			limit = {
+				494 = { is_owned_by = ROOT }
+			}
+			73 = {
+				owner = {
+					transfer_state  = 494
+					add_state_claim = 494
+				}
+			}
+		}
+		if = {
+			limit = {
+				495 = { is_owned_by = ROOT }
+			}
+			73 = {
+				owner = {
+					transfer_state  = 495
+					add_state_claim = 495
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Fate of South Slovakia
+	id = edo_occupation_event.14
+	title = edo_occupation_event.14.t
+	desc = edo_occupation_event.14.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.14" }
+	
+	option = {
+		name = edo_occupation_event.14.a #To Slovakia
+		trigger = {
+			NOT = {
+				HUN = {
+					owns_state = 465
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		if = {
+			limit = {
+				SLO = { exists = yes }
+			}
+			SLO = { 
+				transfer_state  = 243
+				add_state_core = 243
+			}
+		}
+		else = {
+			CZE = { 
+				transfer_state  = 243
+				add_state_core = 243
+			}
+		}
+		if = {
+			limit = {
+				443 = {
+					has_state_flag = not_to_give_away
+				}
+			}
+			243 = {
+				owner = {
+					transfer_state  = 443
+					add_state_claim = 443
+				}
+			}
+			443 = { clr_state_flag = not_to_give_away }
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.14.b
+		trigger = {
+			NOT = {
+				443 = {
+					has_state_flag = not_to_give_away
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		HUN = { 
+			transfer_state  = 243
+			add_state_claim = 243
+		}
+	}
+}
+
+country_event = { #Fate of Carpatho Ruthenia
+	id = edo_occupation_event.15
+	title = edo_occupation_event.15.t
+	desc = edo_occupation_event.15.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.15" }
+	
+	option = {
+		name = edo_occupation_event.15.a #To Slovakia
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					NOT = {
+						SOV = {
+							owns_state = 283
+						}
+						UKR = {
+							owns_state = 283
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				SLO = { exists = yes }
+			}
+			SLO = { 
+				transfer_state  = 242
+				add_state_core = 242
+			}
+		}
+		else = {
+			CZE = { 
+				transfer_state  = 242
+				add_state_core = 242
+			}
+		}
+		if = {
+			limit = {
+				owns_state = 391
+			}
+			if = {
+				limit = {
+					SLO = { exists = yes }
+				}
+				SLO = { 
+					transfer_state  = 391
+					add_state_core = 391
+				}
+			}
+			else = {
+				CZE = { 
+					transfer_state  = 391
+					add_state_core = 391
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.15.b #To Hungary
+		trigger = {
+			NOT = {
+				443 = {
+					OR = {
+						has_state_flag = not_to_give_away
+						is_owned_by = CZE
+						is_owned_by = SLO
+					}
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		HUN = { 
+			transfer_state  = 242
+			add_state_claim = 242
+		}
+		if = {
+			limit = {
+				owns_state = 465
+			}
+			HUN = { 
+				transfer_state  = 465
+				add_state_claim = 465
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.15.c #Independant Carpathian Ruthenia
+		trigger = {
+			NOT = {
+				443 = {
+					OR = {
+						has_state_flag = not_to_give_away
+						is_owned_by = CZE
+						is_owned_by = SLO
+					}
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		RUT = { 
+			transfer_state  = 242
+			add_state_claim = 242
+		}
+		set_variable = { edo_release_target = RUT }
+		edo_scripted_puppet = yes
+	}
+	
+	option = {
+		name = edo_occupation_event.15.d #To Ukraine
+		trigger = {
+			OR = {
+				SOV = {
+					owns_state = 283
+				}
+				UKR = {
+					owns_state = 283
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		283 = {
+			owner = {
+				transfer_state  = 242
+				add_state_claim = 242
+			}
+		}
+	}
+}
+
+country_event = { #Fate of South Carpatho Ruthenia
+	id = edo_occupation_event.16
+	title = edo_occupation_event.16.t
+	desc = edo_occupation_event.16.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.16" }
+	
+	option = {
+		name = edo_occupation_event.16.a #To whoever owns Carpathian Ruthenia
+		trigger = {
+			NOT = {
+				HUN = {
+					owns_state = 243
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		
+		242 = {
+			owner = {
+				transfer_state  = 465
+				add_state_claim = 465
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.16.b #To Hungary
+		trigger = {
+			NOT = {
+				443 = {
+					OR = {
+						has_state_flag = not_to_give_away
+						is_owned_by = CZE
+						is_owned_by = SLO
+					}
+				}
+				243 = {
+					OR = {
+						is_owned_by = CZE
+						is_owned_by = SLO
+					}
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		HUN = { 
+			transfer_state  = 465
+			add_state_claim = 465
+		}
+	}
+}
+
+country_event = { #Fate of Sobrance
+	id = edo_occupation_event.17
+	title = edo_occupation_event.17.t
+	desc = edo_occupation_event.17.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.17" }
+	
+	option = {
+		name = edo_occupation_event.16.a #To Slovakia
+		ai_chance = { 
+			factor = 50
+		}
+		
+		244 = {
+			owner = {
+				transfer_state  = 391
+				add_state_claim = 391
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.16.b #To whoever owns Carpathian Ruthenia
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		242 = {
+			owner = {
+				transfer_state  = 391
+				add_state_claim = 391
+			}
+		}
+	}
+}
+
+country_event = { #Fate of Zaolzie
+	id = edo_occupation_event.18
+	title = edo_occupation_event.18.t
+	desc = edo_occupation_event.18.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.18" }
+	
+	option = {
+		name = edo_occupation_event.18.a #To Czechia
+		ai_chance = { 
+			factor = 50
+		}
+		
+		CZE = {
+			transfer_state  = 277
+			add_state_claim = 277
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.18.b #To Poland
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		POL = {
+			transfer_state  = 277
+			add_state_claim = 277
+		}
+	}
+}
+
+country_event = { #Fate of Prussia
+	id = edo_occupation_event.19
+	title = edo_occupation_event.19.t
+	desc = edo_occupation_event.19.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.19" }
+	
+	option = {
+		name = edo_occupation_event.19.a #All Prussia to Poland
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_eastern_prussia = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			POL = { transfer_state  = PREV }
+			add_core_of = POL
+			remove_core_of = GER
+			remove_core_of = PRE
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.19.b #Prussia to Poland and Lithuania
+		ai_chance = { 
+			factor = 50
+		}
+		
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.20
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.19.c #Independant Prussia
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.21
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.19.d #Prussia to Poland and Germany
+		trigger = {
+			WGR = { exists = yes }
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.22
+			}
+		}
+	}
+}
+
+country_event = { #Fate of Prussia
+	id = edo_occupation_event.20
+	title = edo_occupation_event.20.t
+	desc = edo_occupation_event.20.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.20" }
+	
+	option = {
+		name = edo_occupation_event.20.a #Plebiscite Area to Poland
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		if = {
+			limit = {
+				LIT = { exists = yes }
+			}
+			LIT = { 
+				transfer_state  = 23
+				add_state_core = 23
+				transfer_state  = 74
+				add_state_core = 74
+			}
+		}
+		else = {
+			SOV = { 
+				transfer_state  = 23
+				add_state_core = 23
+				transfer_state  = 74
+				add_state_core = 74
+			}
+		}
+		POL = { 
+			transfer_state  = 413
+			add_state_core = 413
+		}
+		GER = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+		PRE = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.20.b #IRL divisions
+		ai_chance = { 
+			factor = 50
+		}
+		
+		if = {
+			limit = {
+				LIT = { exists = yes }
+			}
+			LIT = { 
+				transfer_state  = 23
+				add_state_core = 23
+			}
+		}
+		else = {
+			SOV = { 
+				transfer_state  = 23
+				add_state_core = 23
+			}
+		}
+		POL = { 
+			transfer_state  = 413
+			add_state_core = 413
+			transfer_state  = 74
+			add_state_core = 74
+		}
+		GER = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+		PRE = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+	}
+}
+
+country_event = { #Fate of Prussia
+	id = edo_occupation_event.21
+	title = edo_occupation_event.21.t
+	desc = edo_occupation_event.21.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.21" }
+	
+	option = {
+		name = edo_occupation_event.21.a #All Prussia Independant
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_eastern_prussia = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			PRE = { transfer_state  = PREV }
+			add_core_of = PRE
+		}
+		
+		set_variable = { edo_release_target = PRE }
+		edo_scripted_puppet = yes
+	}
+	
+	option = {
+		name = edo_occupation_event.21.b #Plebiscite Area to Poland
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		PRE = { 
+			transfer_state  = 23
+			add_state_core = 23
+			transfer_state  = 74
+			add_state_core = 74
+		}
+		POL = {
+			transfer_state  = 413
+			add_state_core = 413
+		}
+		GER = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+		PRE = {
+			remove_state_core = 413
+		}
+		
+		set_variable = { edo_release_target = PRE }
+		edo_scripted_puppet = yes
+	}
+	
+	option = {
+		name = edo_occupation_event.21.c #IRL divisions
+		ai_chance = { 
+			factor = 50
+		}
+		
+		PRE = { 
+			transfer_state  = 23
+			add_state_core = 23
+		}
+		POL = { 
+			transfer_state  = 413
+			add_state_core = 413
+			transfer_state  = 74
+			add_state_core = 74
+		}
+		GER = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+		PRE = {
+			remove_state_core = 413
+			remove_state_core = 74
+		}
+		
+		set_variable = { edo_release_target = PRE }
+		edo_scripted_puppet = yes
+	}
+}
+
+country_event = { #Fate of Prussia
+	id = edo_occupation_event.22
+	title = edo_occupation_event.22.t
+	desc = edo_occupation_event.22.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.22"
+		if = {
+			limit = {
+				DDR = { exists = yes }
+			}
+			DDR = {
+				save_event_target_as = GER_TAG
+			}
+			else_if = {
+				limit = {
+					WGR = { 
+						exists = yes
+						owns_state = 440
+					}
+				}
+				WGR = {
+					save_event_target_as = GER_TAG
+				}
+			}
+			else = {
+				PRE = {
+					save_event_target_as = GER_TAG
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.22.a #All Prussia Independant
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_eastern_prussia = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			event_target:GER_TAG = { transfer_state  = PREV }
+			add_core_of = event_target:GER_TAG
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.22.b #Plebiscite Area to Poland
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		POL = {
+			transfer_state  = 413
+			add_state_core = 413
+		}
+		GER = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+		PRE = {
+			remove_state_core = 413
+		}
+		event_target:GER_TAG = { 
+			transfer_state  = 23
+			add_state_core = 23
+			transfer_state  = 74
+			add_state_core = 74
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.22.c #IRL divisions
+		ai_chance = { 
+			factor = 50
+		}
+		
+		POL = {
+			transfer_state  = 413
+			add_state_core = 413
+			transfer_state  = 74
+			add_state_core = 74
+		}
+		GER = {
+			remove_state_core = 413
+			remove_state_core = 23
+			remove_state_core = 74
+		}
+		PRE = {
+			remove_state_core = 413
+			remove_state_core = 74
+		}
+		event_target:GER_TAG = { 
+			transfer_state  = 23
+			add_state_core = 23
+		}
+	}
+}
+
+country_event = { #Fate of Germany - Global
+	id = edo_occupation_event.23
+	title = edo_occupation_event.23.t
+	desc = edo_occupation_event.23.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.23" }
+	
+	option = {
+		name = edo_occupation_event.23.a #Occupation Zones
+		ai_chance = { 
+			factor = 50
+		}
+		set_global_flag = fate_of_germany_decided
+		set_global_flag = germany_occupation_zones
+	}
+	
+	option = {
+		name = edo_occupation_event.23.b #Balkanised Germany
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 3
+				OR = {
+					original_tag = FRA
+					original_tag = POL
+					original_tag = CZE
+				}
+			}
+		}
+		set_global_flag = fate_of_germany_decided
+		set_global_flag = germany_balkanised
+	}
+}
+
+country_event = { #Fate of Silesia
+	id = edo_occupation_event.24
+	title = edo_occupation_event.24.t
+	desc = edo_occupation_event.24.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.24"
+		GER = {
+			remove_state_core = 281
+			remove_state_core = 282
+			remove_state_core = 424
+			remove_state_core = 425
+			remove_state_core = 426
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.24.a #All Silesia to Poland
+		trigger = {
+			OR = {
+				POL = { owns_state = 82 }
+				ROOT = { owns_state = 82 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_silesia = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			POL = { transfer_state  = PREV }
+			add_core_of = POL
+			remove_core_of = GER
+			remove_core_of = SIL
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.24.b #Silesia to Poland and Czechoslovakia/Sudetenland owner
+		trigger = {
+			OR = {
+				CZE = { owns_state = 247 }
+				SDT = { owns_state = 247 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.26
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.24.c #German Silesia
+		trigger = {
+			OR = {
+				has_global_flag = germany_balkanised
+				WGR = { exists = yes }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		ROOT = {
+			country_event = {
+				id = edo_occupation_event.25
+			}
+		}
+	}
+}
+
+country_event = { #Fate of Silesia - To Czechia/Sudetia
+	id = edo_occupation_event.25
+	title = edo_occupation_event.25.t
+	desc = edo_occupation_event.25.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.25"
+		if = {
+			limit = {
+				DDR = { exists = yes }
+			}
+			DDR = {
+				save_event_target_as = GER_TAG
+			}
+			else_if = {
+				limit = {
+					WGR = { 
+						exists = yes
+						owns_state = 440
+					}
+				}
+				WGR = {
+					save_event_target_as = GER_TAG
+				}
+			}
+			else = {
+				SIL = {
+					save_event_target_as = GER_TAG
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = germany_balkanised
+			}
+			SIL = {
+				save_event_target_as = GER_TAG
+			}
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.25.a #Everything to Czechia
+		trigger = {
+			NOT = {
+				POL = { owns_state = 280 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		event_target:GER_TAG = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 282
+			add_state_core = 282
+			transfer_state  = 424
+			add_state_core = 424
+			transfer_state  = 425
+			add_state_core = 425
+			transfer_state  = 426
+			add_state_core = 426
+		}
+		if = {
+			limit = {
+				has_global_flag = germany_balkanised
+			}
+			set_variable = { edo_release_target = SIL }
+			edo_scripted_puppet = yes
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.25.b #Oder–Neisse line D
+		trigger = {
+			NOT = {
+				POL = { owns_state = 280 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		POL = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 424
+			add_state_core = 424
+		}
+		event_target:GER_TAG = {
+			transfer_state  = 282
+			add_state_core = 282
+			transfer_state  = 425
+			add_state_core = 425
+			transfer_state  = 426
+			add_state_core = 426
+		}
+		SIL = {
+			remove_state_core = 281
+			remove_state_core = 424
+		}
+		if = {
+			limit = {
+				has_global_flag = germany_balkanised
+			}
+			set_variable = { edo_release_target = SIL }
+			edo_scripted_puppet = yes
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.25.c #Oder–Neisse line B
+		ai_chance = { 
+			factor = 50
+		}
+		POL = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 424
+			add_state_core = 424
+			transfer_state  = 425
+			add_state_core = 425
+			transfer_state  = 426
+			add_state_core = 426
+		}
+		event_target:GER_TAG = {
+			transfer_state  = 282
+			add_state_core = 282
+		}
+		SIL = {
+			remove_state_core = 281
+			remove_state_core = 424
+			remove_state_core = 425
+			remove_state_core = 426
+		}
+		if = {
+			limit = {
+				has_global_flag = germany_balkanised
+			}
+			set_variable = { edo_release_target = SIL }
+			edo_scripted_puppet = yes
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.25.d #North of the river
+		ai_chance = { 
+			factor = 50
+		}
+		POL = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 426
+			add_state_core = 426
+		}
+		event_target:GER_TAG = {
+			transfer_state  = 282
+			add_state_core = 282
+			transfer_state  = 424
+			add_state_core = 424
+		}
+		SIL = {
+			remove_state_core = 281
+			remove_state_core = 426
+		}
+		if = {
+			limit = {
+				POL = { owns_state = 280 }
+			}
+			POL = {
+				transfer_state  = 425
+				add_state_core = 425
+			}
+			SIL = {
+				remove_state_core = 425
+			}
+			else = {
+				event_target:GER_TAG = {
+					transfer_state  = 425
+					add_state_core = 425
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = germany_balkanised
+			}
+			set_variable = { edo_release_target = SIL }
+			edo_scripted_puppet = yes
+		}
+	}	
+}
+
+country_event = { #Fate of Silesia - To Czechia/Sudetia
+	id = edo_occupation_event.26
+	title = edo_occupation_event.26.t
+	desc = edo_occupation_event.26.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.26"
+		247 = {
+			owner = { save_event_target_as = CZE_TAG }
+		}
+		SIL = {
+			remove_state_core = 281
+			remove_state_core = 282
+			remove_state_core = 424
+			remove_state_core = 425
+			remove_state_core = 426
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.26.a #Everything to Czechia
+		trigger = {
+			NOT = {
+				POL = { owns_state = 280 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		event_target:CZE_TAG = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 282
+			add_state_core = 282
+			transfer_state  = 424
+			add_state_core = 424
+			transfer_state  = 425
+			add_state_core = 425
+			transfer_state  = 426
+			add_state_core = 426
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.26.b #Oder–Neisse line D
+		trigger = {
+			NOT = {
+				POL = { owns_state = 280 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		POL = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 424
+			add_state_core = 424
+		}
+		event_target:CZE_TAG = {
+			transfer_state  = 282
+			add_state_core = 282
+			transfer_state  = 425
+			add_state_core = 425
+			transfer_state  = 426
+			add_state_core = 426
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.26.c #Oder–Neisse line B
+		ai_chance = { 
+			factor = 50
+		}
+		POL = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 424
+			add_state_core = 424
+			transfer_state  = 425
+			add_state_core = 425
+			transfer_state  = 426
+			add_state_core = 426
+		}
+		event_target:CZE_TAG = {
+			transfer_state  = 282
+			add_state_core = 282
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.26.d #North of the river
+		ai_chance = { 
+			factor = 50
+		}
+		POL = { 
+			transfer_state  = 281
+			add_state_core = 281
+			transfer_state  = 426
+			add_state_core = 426
+		}
+		event_target:CZE_TAG = {
+			transfer_state  = 282
+			add_state_core = 282
+			transfer_state  = 424
+			add_state_core = 424
+		}
+		if = {
+			limit = {
+				POL = { owns_state = 280 }
+			}
+			POL = {
+				transfer_state  = 425
+				add_state_core = 425
+			}
+			else = {
+				event_target:CZE_TAG = {
+					transfer_state  = 425
+					add_state_core = 425
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #Fate of Pommerania
+	id = edo_occupation_event.27
+	title = edo_occupation_event.27.t
+	desc = edo_occupation_event.27.d
+	picture = GFX_edo_event_1
+	is_triggered_only = yes
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event edo_occupation_event.27"
+		80 = {
+			owner = { save_event_target_as = POM_TAG }
+		}
+		439 = {
+			owner = { save_event_target_as = BRN_TAG }
+		}
+		GER = {
+			remove_state_core = 82
+			remove_state_core = 280
+			remove_state_core = 428
+			remove_state_core = 429
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.27.a #All Pommerania to Poland
+		trigger = {
+			OR = {
+				POL = { owns_state = 426 }
+				ROOT = { owns_state = 426 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+		
+		every_owned_state = {
+			limit = {
+				is_pommerania = yes
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			POL = { transfer_state  = PREV }
+			add_core_of = POL
+			remove_core_of = GER
+			remove_core_of = BRN
+			remove_core_of = POM
+		}
+		425 = { 
+			POL = { transfer_state  = PREV }
+			add_core_of = POL
+			remove_core_of = GER
+			remove_core_of = SIL
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.27.b #Half of Pomerania to Poland - Oder Neisse C
+		trigger = {
+			NOT = {
+				POL = { owns_state = 425 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		POL = { 
+			transfer_state  = 429
+			add_state_core = 429
+			transfer_state  = 428
+			add_state_core = 428
+		}
+		POM = {
+			remove_state_core = 429
+			remove_state_core = 428
+		}
+		event_target:BRN_TAG = { 
+			transfer_state  = 280
+			add_state_core = 280
+		}
+		event_target:POM_TAG = { 
+			transfer_state  = 82
+			add_state_core = 82
+		}
+	}
+	
+	option = {
+		name = edo_occupation_event.27.c #German Pommerania
+		trigger = {
+			NOT = {
+				POL = { owns_state = 425 }
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		event_target:BRN_TAG = { 
+			transfer_state  = 280
+			add_state_core = 280
+		}
+		event_target:POM_TAG = { 
+			transfer_state  = 82
+			add_state_core = 82
+			transfer_state  = 429
+			add_state_core = 429
+			transfer_state  = 428
+			add_state_core = 428
+		}
+	}
+}

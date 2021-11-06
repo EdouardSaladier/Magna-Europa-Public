@@ -1,0 +1,23 @@
+
+state={
+	id=513
+	name="STATE_513"
+
+	history={
+		add_core_of = POL
+		add_core_of = BLR
+		owner = POL
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+
+	provinces={
+		219 1434 2622 2934 5106 8181 11079 13080 13100 13166 13190 13205 13240 13268 13287 13325 
+	}
+	manpower=217800
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

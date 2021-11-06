@@ -1,0 +1,25 @@
+state={
+	id=601
+	name="STATE_601"
+
+	history={
+		owner = YUG
+		buildings = {
+			infrastructure = 4
+
+		}
+		victory_points = {
+			15168 5 
+		}
+		add_core_of = YUG
+		add_core_of = SLV
+
+	}
+
+	provinces={
+		568 10345 15168 15193 15208 15209 15218 
+	}
+	manpower=113000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

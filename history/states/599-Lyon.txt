@@ -1,0 +1,29 @@
+state={
+	id=599
+	name="STATE_599"
+	provinces={
+		19886 19894 19899 
+	}
+	
+	resources={
+		steel=60.000
+		aluminium=35.000
+	}
+	
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 7
+			arms_factory = 1
+			industrial_complex = 2
+			air_base = 4
+
+		}
+
+	}
+	
+	manpower=570622
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

@@ -1,0 +1,41 @@
+
+state={
+	id=118
+	name="STATE_118"
+	resources={
+		steel=1.000
+	}
+
+	history={
+		owner = LAT
+		add_core_of = LAT
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 2
+			air_base = 3
+			5772 = {
+				naval_base = 3
+
+			}
+
+		}
+		victory_points = {
+			12833 1 
+		}
+		victory_points = {
+			12836 1 
+		}
+		victory_points = {
+			12913 1 
+		}
+
+	}
+
+	provinces={
+		32 1397 1574 2337 3238 3909 4794 4833 5772 7410 7879 8633 9219 9373 10736 11450 12808 12826 12833 12835 12836 12857 12874 12880 12885 12901 12913 12919 12931 12970 
+	}
+	manpower=638610
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

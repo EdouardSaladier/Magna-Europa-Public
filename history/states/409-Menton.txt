@@ -1,0 +1,22 @@
+
+state={
+	id=409
+	name="STATE_409"
+
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		3853 8193 9301 
+	}
+	manpower=21331
+	buildings_max_level_factor=1.000
+	state_category=enclave
+}

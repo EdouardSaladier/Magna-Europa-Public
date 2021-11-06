@@ -1,0 +1,19 @@
+state={
+	id=536
+	name="STATE_536"
+	provinces={
+		224 317 1052 1112 2216 2483 2711 3379 3491 3559 4279 4945 5598 6438 7479 8004 8020 8470 10031 10059 10103 10561 11131 11415 12361 12379 12405 12418 12424 12430 12440 12446 12464 12473 12481 12487 12497 12510 12526 
+	}
+	
+	history={
+		owner = SOV
+		add_core_of = SOV
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	
+	manpower=374400
+	buildings_max_level_factor=1.000
+	state_category=town
+}

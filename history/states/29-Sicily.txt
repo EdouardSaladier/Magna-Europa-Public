@@ -1,0 +1,49 @@
+
+state={
+	id=29
+	name="STATE_29"
+
+	history={
+		owner = ITA
+		add_core_of = ITA
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			air_base = 10
+			dockyard = 1
+			10239 = {
+				naval_base = 2
+
+			}
+			2961 = {
+				naval_base = 5
+
+			}
+			9405 = {
+				naval_base = 8
+
+			}
+
+		}
+		victory_points = {
+			10239 20 
+		}
+		victory_points = {
+			9025 5 
+		}
+		victory_points = {
+			2961 3 
+		}
+		victory_points = {
+			9405 2 
+		}
+
+	}
+
+	provinces={
+		209 872 2161 2663 2863 2961 3925 4725 4799 5515 5804 7367 7707 9025 9168 9196 9226 9405 10021 10239 10349 10360 10785 10823 11046 11487 16586 16592 16598 16606 16614 16626 16629 16635 16640 16642 16649 16651 16652 16663 16676 17364 17372 17374 17377 17404 20287 
+	}
+	manpower=4000078
+	buildings_max_level_factor=1.000
+	state_category=city
+}

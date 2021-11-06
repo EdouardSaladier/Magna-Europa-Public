@@ -1,0 +1,30 @@
+
+state={
+	id=540
+	name="STATE_540"
+
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 6
+
+		}
+		victory_points = {
+			20001 1 
+		}
+		victory_points = {
+			1306 1 
+		}
+		victory_points = {
+			15762 1 
+		}
+
+	}
+
+	provinces={
+		2790 4109 5058 5252 7419 11294 15686 15718 15762 19999 20000 20001 20004 20007 
+	}
+	manpower=398700
+	buildings_max_level_factor=1.000
+	state_category=town
+}

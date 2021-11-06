@@ -1,0 +1,22 @@
+
+state={
+	id=590
+	name="STATE_590"
+
+	history={
+		owner = SWI
+		add_core_of = SWI
+		buildings = {
+			infrastructure = 6
+
+		}
+
+	}
+
+	provinces={
+		55 492 5034 6826 7120 9212 9555 11045 15090 15099 15109 15146 
+	}
+	manpower=126000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

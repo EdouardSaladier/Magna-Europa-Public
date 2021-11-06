@@ -1,0 +1,20 @@
+state={
+	id=524
+	name="STATE_524"
+	provinces={
+		1241 13482 
+	}
+	
+	history={
+		add_core_of = POL
+		add_core_of = BLR
+		owner = POL
+		buildings = {
+			infrastructure = 5
+		}
+	}
+	
+	manpower=67153
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

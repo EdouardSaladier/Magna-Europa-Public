@@ -1,0 +1,21 @@
+state={
+	id=570
+	name="STATE_570"
+	
+	history={
+		owner = TUR
+		add_core_of = TUR
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+	
+	provinces={
+		2839 3302 3556 4194 5709 6676 7560 7976 9436 10526 15276 15313 15317 15340 15358 15361 15412 15473 
+	}
+	manpower=263875
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

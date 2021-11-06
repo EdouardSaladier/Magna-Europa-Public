@@ -1,0 +1,23 @@
+state={
+	id=504
+	name="STATE_504"
+	provinces={
+		3424 3428 4506 7039 7620 11412 15864 15906 15907 15923 3169 3445
+	}
+	manpower=140000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	history={
+		owner = BUL
+		add_core_of=BUL
+		buildings={
+			infrastructure=4
+		}
+		victory_points = {
+		7620 2
+		}
+		victory_points = {
+		3428 1
+		}
+    }
+}

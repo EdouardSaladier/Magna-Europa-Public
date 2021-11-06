@@ -1,0 +1,36 @@
+state={
+	id=517
+	name="STATE_517"
+	provinces={
+		909 978 1971 8620 9856 13375 13398 17291 17294 17295 17296 
+	}
+	
+	history={
+		owner = GER
+		add_core_of = GER
+		add_core_of = HLS
+		
+		buildings = {
+			infrastructure = 6
+			arms_factory = 1
+			dockyard = 2
+		}
+		victory_points = {
+			13375 5 
+		}
+		victory_points = {
+			13398 3 
+		}
+		victory_points = {
+			978 1 
+		}
+		victory_points = {
+			17291 1 
+		}
+
+	}
+	
+	manpower=1136852
+	buildings_max_level_factor=1.000
+	state_category=city
+}

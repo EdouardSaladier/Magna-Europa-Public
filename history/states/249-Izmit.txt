@@ -1,0 +1,40 @@
+
+state={
+	id=249
+	name="STATE_249"
+	resources={
+		chromium=27.000
+	}
+
+	history={
+		owner = TUR
+		add_core_of = TUR
+		buildings = {
+			infrastructure = 4
+
+		}
+		victory_points = {
+			6426 5 
+		}
+		victory_points = {
+			6942 1 
+		}
+		victory_points = {
+			15846 3 
+		}
+		victory_points = {
+			8160 1 
+		}
+		victory_points = {
+			9812 1 
+		}
+
+	}
+
+	provinces={
+		4913 6426 6942 8160 9812 15788 15817 15843 15875 
+	}
+	manpower=385300
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

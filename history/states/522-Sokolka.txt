@@ -1,0 +1,23 @@
+state={
+	id=522
+	name="STATE_522"
+	provinces={
+		1527 3729 5259 
+	}
+	
+	history={
+		owner = POL
+		add_core_of = POL
+		buildings = {
+			infrastructure = 5
+		}
+		victory_points = {
+			3729 1 
+		}
+
+	}
+	
+	manpower=104148
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

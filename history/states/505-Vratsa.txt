@@ -1,0 +1,30 @@
+state={
+	id=505
+	name="STATE_505"
+	provinces={
+		702 2312 4490 6319 7443 7962 8694 8745 9698 10822 15521 15549 15573 15579 15618
+	}
+	manpower=391500
+	buildings_max_level_factor=1.000
+	state_category = town
+	history={
+		owner = BUL
+		add_core_of = BUL
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+		}
+		victory_points = {
+		4490 5
+		}
+		victory_points = {
+		15579 1
+		}
+		victory_points = {
+		15618 5
+		}
+		victory_points = {
+		15549 2
+		}
+    }
+}

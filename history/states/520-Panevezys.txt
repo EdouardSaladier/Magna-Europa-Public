@@ -1,0 +1,25 @@
+state={
+	id=520
+	name="STATE_520"
+	provinces={
+		356 468 613 2298 2653 2654 2808 3508 4892 6000 6099 6132 8024 8213 8541 9571 10606 13037 13047 13093 13094 13119 13157 13163 13203 13233 
+	}
+	
+	history={
+		owner = LIT
+		add_core_of = LIT
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			2298 1 
+		}
+
+	}
+	
+	manpower=473595
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

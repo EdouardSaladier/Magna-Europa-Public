@@ -1,0 +1,24 @@
+state={
+	id=543
+	name="STATE_543"
+
+	history={
+		owner = SPR
+		add_core_of = SPR
+		buildings = {
+			infrastructure = 6
+
+		}
+		victory_points = {
+			15593 1 
+		}
+
+	}
+
+	provinces={
+		3824 5535 6342 8279 9996 15593 15596 15621 
+	}
+	manpower=380080
+	buildings_max_level_factor=1.000
+	state_category=town
+}

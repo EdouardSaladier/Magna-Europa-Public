@@ -1,0 +1,57 @@
+
+state={
+	id=148
+	name="STATE_148"
+
+	history={
+		owner = BUL
+		add_core_of = BUL
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+			air_base = 2
+
+		}
+		victory_points = {
+			7950 10
+		}
+		victory_points = {
+			10118 20
+		}
+		victory_points = {
+			15752 5
+		}
+		victory_points = {
+			20360 2
+		}
+		victory_points = {
+			7193 5
+		}
+		victory_points = {
+			20376 1
+		}
+		victory_points = {
+			9556 1
+		}
+		victory_points = {
+			20363 2
+		}
+		victory_points = {
+			2425 1
+		}
+		victory_points = {
+			20391 1
+		}
+		victory_points = {
+			20382 5
+		}
+	}
+
+	provinces={
+		713 946 2083 2425 3514 4050 5003 6243 7193 7474 7950 9070 9280 9383 10118 10156 10811 15692 15707 15752 15778 15785 15803 15808 15829 9556 15712 6411 15802 9594 20358 20359 20360 20361 20362 20363 20364 20376 20377 20378 20379 20380 20381 20382 20383 20384 20385 20386 20387 20388 20389 20390 20391 20392 20393 20394 20395
+	}
+	manpower=1821100
+	buildings_max_level_factor=1.000
+	state_category=city
+}

@@ -1,0 +1,25 @@
+
+state={
+	id=445
+	name="STATE_445"
+
+	history={
+		owner = SWI
+		add_core_of = SWI
+		buildings = {
+			infrastructure = 6
+
+		}
+		victory_points = {
+			6459 1 
+		}
+
+	}
+
+	provinces={
+		5536 6459 10314 10761 15177 20178 
+	}
+	manpower=161000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

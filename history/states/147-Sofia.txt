@@ -1,0 +1,41 @@
+
+state={
+	id=147
+	name="STATE_147"
+	provinces={
+		619 1089 5250 5474 6615 8047 8174 9623 9817 10666 11221 15662 15672 15701 15722 15738 15746 15763 15770 15774 15813 20365 20366 20367 20368 20369 20370 20371 20372 20373 20374 20375
+	}
+	manpower=915000
+	buildings_max_level_factor=1.000
+	state_category = city
+	resources={
+		aluminium=2 # was: 2
+	}
+	history={
+		owner = BUL
+		add_core_of = BUL
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			air_base = 3
+		}
+		victory_points = {
+		15722 1
+		}
+		victory_points = {
+		20367 5
+		}
+		victory_points = {
+		20372 1
+		}
+		victory_points = {
+		1089 1
+		}
+		victory_points = {
+		8047 30
+		}
+		victory_points = {
+		11221 2
+		}
+    }
+}

@@ -1,0 +1,22 @@
+state={
+	id=563
+	name="STATE_563"
+	
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = KUM
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+	
+	provinces={
+		105 1202 1308 1831 2466 2745 4522 4699 7045 8403 8659 10507 11380 14344 14457 14476 14485 
+	}
+	manpower=233005
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

@@ -1,0 +1,24 @@
+state={
+	id=550
+	name="STATE_550"
+	
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = AZR
+		add_core_of = ARM
+		add_core_of = NAG
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+	
+	provinces={
+		4963 6181 9724 9898 10786 15063 15116 15219 15259 
+	}
+	manpower=58629
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

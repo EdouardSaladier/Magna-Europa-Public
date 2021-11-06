@@ -1,0 +1,50 @@
+state={
+	id=534
+	name="STATE_534"
+	provinces={
+		6206 10224 10722 10743 12456 12468 12480 19382 19384 
+	}
+	
+	history={
+		owner = FIN
+		add_core_of = FIN
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			12480 = {
+				bunker = 2
+				coastal_bunker = 1
+
+			}
+			12456 = {
+				bunker = 2
+
+			}
+			6206 = {
+				bunker = 2
+
+			}
+			10224 = {
+				bunker = 1
+
+			}
+			12468 = {
+				bunker = 1
+
+			}
+			10743 = {
+				bunker = 1
+
+			}
+
+		}
+		victory_points = {
+			12456 3 
+		}
+
+	}
+	
+	manpower=83727
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,1244 @@
+on_actions = {
+	
+	on_state_control_changed = {
+
+		effect = {
+			#Split
+			if = {
+				limit = {
+					FROM.FROM = { state = 383 }
+					383 = { NOT = { has_state_flag = ITA_Split } }
+					ROOT = { original_tag = ITA }
+				}
+				383 = { set_state_name = Spalato }
+				set_province_name = { id = 4410 name = Sebenico }
+				set_province_name = { id = 4828 name = Spalato }
+				383 = { set_state_flag = ITA_Split }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 383 }
+					383 = { has_state_flag = ITA_Split }
+					ROOT = { NOT = { original_tag = ITA } }
+				}
+				383 = { reset_state_name = yes }
+				reset_province_name = 4410
+				reset_province_name = 4828
+				383 = { clr_state_flag = ITA_Split }
+			}
+			
+			#Susak
+			if = {
+				limit = {
+					FROM.FROM = { state = 411 }
+					411 = { NOT = { has_state_flag = ITA_Susak } }
+					ROOT = { original_tag = ITA }
+				}
+				411 = { set_state_name = Carnaro }
+				411 = { set_state_flag = ITA_Susak }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 411 }
+					411 = { has_state_flag = ITA_Susak }
+					ROOT = { NOT = { original_tag = ITA } }
+				}
+				411 = { reset_state_name = yes }
+				411 = { clr_state_flag = ITA_Susak }
+			}
+			
+			#Dalmatia
+			if = {
+				limit = {
+					FROM.FROM = { state = 100 }
+					100 = { NOT = { has_state_flag = ITA_Dalmatia } }
+					ROOT = { original_tag = ITA }
+				}
+				100 = { set_state_name = Dalmazia }
+				set_province_name = { id = 9923 name = Ragusa }
+				100 = { set_state_flag = ITA_Dalmatia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 100 }
+					100 = { has_state_flag = ITA_Dalmatia }
+					ROOT = { NOT = { original_tag = ITA } }
+				}
+				100 = { reset_state_name = yes }
+				reset_province_name = 9923
+				100 = { clr_state_flag = ITA_Dalmatia }
+			}
+			
+			#Albania
+			if = {
+				limit = {
+					FROM.FROM = { state = 129 }
+					129 = { NOT = { has_state_flag = ITA_Albania } }
+					ROOT = { original_tag = ITA }
+				}
+				set_province_name = { id = 265 name = Valona }
+				set_province_name = { id = 15883 name = Scutari }
+				129 = { set_state_flag = ITA_Albania }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 129 }
+					100 = { has_state_flag = ITA_Albania }
+					ROOT = { NOT = { original_tag = ITA } }
+				}
+				reset_province_name = 265
+				reset_province_name = 15883
+				129 = { clr_state_flag = ITA_Dalmatia }
+			}
+			
+			#Northern Epirus
+			if = {
+				limit = {
+					FROM.FROM = { state = 462 }
+					462 = { NOT = { has_state_flag = ITA_N_Epirus } }
+					ROOT = { original_tag = ITA }
+				}
+				set_province_name = { id = 766 name = Corizza }
+				set_province_name = { id = 16241 name = Saranda }
+				set_province_name = { id = 8216 name = Argirocastro }
+				462 = { set_state_flag = ITA_N_Epirus }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 462 }
+					462 = { has_state_flag = ITA_N_Epirus }
+					ROOT = { NOT = { original_tag = ITA } }
+				}
+				reset_province_name = 766
+				reset_province_name = 16241
+				reset_province_name = 8216
+				462 = { clr_state_flag = ITA_N_Epirus }
+			}
+			
+			#Berehowe
+			if = {
+				limit = {
+					FROM.FROM = { state = 465 }
+					465 = { NOT = { has_state_flag = HUN_Berehowe } }
+					ROOT = { original_tag = HUN }
+				}
+				465 = { set_state_name = Beregszász }
+				set_province_name = { id = 8375 name = Ungvár }
+				set_province_name = { id = 2809 name = Munkács }
+				set_province_name = { id = 14618 name = Beregszász }
+				465 = { set_state_flag = HUN_Berehowe }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 465 }
+					465 = { has_state_flag = HUN_Berehowe }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				465 = { reset_state_name = yes }
+				reset_province_name = 8375
+				reset_province_name = 2809
+				reset_province_name = 14618
+				465 = { clr_state_flag = HUN_Berehowe }
+			}
+			
+			#Carpathian Ruthenia
+			if = {
+				limit = {
+					FROM.FROM = { state = 242 }
+					242 = { NOT = { has_state_flag = HUN_Carpathian_Ruthenia } }
+					ROOT = { original_tag = HUN }
+				}
+				242 = { set_state_name = Kárpátalja }
+				set_province_name = { id = 8608 name = Huszt }
+				set_province_name = { id = 4459 name = Rahó }
+				242 = { set_state_flag = HUN_Carpathian_Ruthenia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 242 }
+					242 = { has_state_flag = HUN_Carpathian_Ruthenia }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				242 = { reset_state_name = yes }
+				reset_province_name = 8608
+				reset_province_name = 4459
+				242 = { clr_state_flag = HUN_Carpathian_Ruthenia }
+			}
+			
+			#Sobrance
+			if = {
+				limit = {
+					FROM.FROM = { state = 391 }
+					391 = { NOT = { has_state_flag = HUN_Sobrance } }
+					ROOT = { original_tag = HUN }
+				}
+				391 = { set_state_name = Szobránc }
+				391 = { set_state_flag = HUN_Sobrance }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 391 }
+					391 = { has_state_flag = HUN_Sobrance }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				391 = { reset_state_name = yes }
+				391 = { clr_state_flag = HUN_Sobrance }
+			}
+			
+			#Western Slovakia
+			if = {
+				limit = {
+					FROM.FROM = { state = 245 }
+					245 = { NOT = { has_state_flag = HUN_Western_Slovakia } }
+					ROOT = { original_tag = HUN }
+				}
+				245 = { set_state_name = Nyugat_Felvidek }
+				set_province_name = { id = 14705 name = Pozsony }
+				set_province_name = { id = 14576 name = Besztercebánya }
+				set_province_name = { id = 7296 name = Nagyszombat }
+				set_province_name = { id = 4631 name = Nyitra }
+				set_province_name = { id = 11205 name = Zsolna }
+				245 = { set_state_flag = HUN_Western_Slovakia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 245 }
+					245 = { has_state_flag = HUN_Western_Slovakia }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				245 = { reset_state_name = yes }
+				reset_province_name = 14705
+				reset_province_name = 14576
+				reset_province_name = 7296
+				reset_province_name = 4631
+				reset_province_name = 11205
+				245 = { clr_state_flag = HUN_Western_Slovakia }
+			}
+			
+			#Eastern Slovakia
+			if = {
+				limit = {
+					FROM.FROM = { state = 244 }
+					244 = { NOT = { has_state_flag = HUN_Eastern_Slovakia } }
+					ROOT = { original_tag = HUN }
+				}
+				244 = { set_state_name = Kelet_Felvidek }
+				set_province_name = { id = 2769 name = Eperjes }
+				set_province_name = { id = 14512 name = Poprád }
+				set_province_name = { id = 6480 name = Námesztó }
+				set_province_name = { id = 11172 name = Lipótszentmiklós }
+				244 = { set_state_flag = HUN_Eastern_Slovakia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 244 }
+					244 = { has_state_flag = HUN_Eastern_Slovakia }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				244 = { reset_state_name = yes }
+				reset_province_name = 2769
+				reset_province_name = 14512
+				reset_province_name = 6480
+				reset_province_name = 4631
+				reset_province_name = 11205
+				244 = { clr_state_flag = HUN_Eastern_Slovakia }
+			}
+
+			#Southern Slovakia
+			if = {
+				limit = {
+					FROM.FROM = { state = 243 }
+					243 = { NOT = { has_state_flag = HUN_Southern_Slovakia } }
+					ROOT = { original_tag = HUN }
+				}
+				243 = { set_state_name = Del_Felvidek }
+				set_province_name = { id = 14546 name = Kassa }
+				set_province_name = { id = 10218 name = Érsekújvár }
+				set_province_name = { id = 14783 name = Dunaszerdahely }
+				set_province_name = { id = 1409 name = Komárom }
+				set_province_name = { id = 7298 name = Losonc }
+				243 = { set_state_flag = HUN_Southern_Slovakia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 243 }
+					243 = { has_state_flag = HUN_Southern_Slovakia }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				243 = { reset_state_name = yes }
+				reset_province_name = 14546
+				reset_province_name = 10218
+				reset_province_name = 14783
+				reset_province_name = 1409
+				reset_province_name = 7298
+				243 = { clr_state_flag = HUN_Southern_Slovakia }
+			}
+			
+			#Bihor_HUN
+			if = {
+				limit = {
+					FROM.FROM = { state = 472 }
+					472 = { NOT = { has_state_flag = HUN_Bihor } }
+					ROOT = { original_tag = HUN }
+				}
+				472 = { set_state_name = Bihar }
+				set_province_name = { id = 9877 name = Nagykároly }
+				set_province_name = { id = 4944 name = Szatmárnémeti }
+				set_province_name = { id = 14949 name = Nagyvárad }
+				472 = { set_state_flag = HUN_Bihor }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 472 }
+					472 = { has_state_flag = HUN_Bihor }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				472 = { reset_state_name = yes }
+				reset_province_name = 9877
+				reset_province_name = 4944
+				reset_province_name = 14949
+				472 = { clr_state_flag = HUN_Bihor }
+			}
+			
+			#Bihor_TRA
+			if = {
+				limit = {
+					FROM.FROM = { state = 472 }
+					472 = { NOT = { has_state_flag = TRA_Bihor } }
+					ROOT = { original_tag = TRA }
+				}
+				472 = { set_state_name = Bihar }
+				set_province_name = { id = 9877 name = Nagykároly }
+				set_province_name = { id = 4944 name = Szatmárnémeti }
+				set_province_name = { id = 14949 name = Nagyvárad }
+				472 = { set_state_flag = TRA_Bihor }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 472 }
+					472 = { has_state_flag = TRA_Bihor }
+					ROOT = { NOT = { original_tag = TRA } }
+				}
+				472 = { reset_state_name = yes }
+				reset_province_name = 9877
+				reset_province_name = 4944
+				reset_province_name = 14949
+				472 = { clr_state_flag = TRA_Bihor }
+			}
+			
+			#Timis
+			if = {
+				limit = {
+					FROM.FROM = { state = 475 }
+					475 = { NOT = { has_state_flag = HUN_Timis } }
+					ROOT = { original_tag = HUN }
+				}
+				475 = { set_state_name = Temes }
+				set_province_name = { id = 8513 name = Nagylak }
+				475 = { set_state_flag = HUN_Timis }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 475 }
+					475 = { has_state_flag = HUN_Timis }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				475 = { reset_state_name = yes }
+				reset_province_name = 8513
+				475 = { clr_state_flag = HUN_Timis }
+			}
+			#Maramures
+			if = {
+				limit = {
+					FROM.FROM = { state = 478 }
+					478 = { NOT = { has_state_flag = HUN_Maramures } }
+					ROOT = { original_tag = HUN }
+				}
+				478 = { set_state_name = Máramaros }
+				set_province_name = { id = 4045 name = Máramarossziget }
+				478 = { set_state_flag = HUN_Maramures }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 478 }
+					478 = { has_state_flag = HUN_Maramures }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				478 = { reset_state_name = yes }
+				reset_province_name = 4045
+				478 = { clr_state_flag = HUN_Maramures }
+			}
+			
+			#Cluj
+			if = {
+				limit = {
+					FROM.FROM = { state = 239 }
+					239 = { NOT = { has_state_flag = HUN_Cluj } }
+					ROOT = { original_tag = HUN }
+				}
+				239 = { set_state_name = Kolozs }
+				set_province_name = { id = 14757 name = Nagybánya }
+				set_province_name = { id = 14912 name = Kolozsvár }
+				239 = { set_state_flag = HUN_Cluj }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 239 }
+					239 = { has_state_flag = HUN_Cluj }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				239 = { reset_state_name = yes }
+				reset_province_name = 14757
+				reset_province_name = 14912
+				239 = { clr_state_flag = HUN_Cluj }
+			}
+			
+			#Szeklerland_HUN
+			if = {
+				limit = {
+					FROM.FROM = { state = 473 }
+					473 = { NOT = { has_state_flag = HUN_Szeklerland } }
+					ROOT = { original_tag = HUN }
+				}
+				473 = { set_state_name = Székelyföld }
+				set_province_name = { id = 15036 name = Sepsiszentgyörgy }
+				set_province_name = { id = 14943 name = Marosvásárhely }
+				set_province_name = { id = 14988 name = Székelyudvarhely }
+				473 = { set_state_flag = HUN_Szeklerland }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 473 }
+					473 = { has_state_flag = HUN_Szeklerland }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				473 = { reset_state_name = yes }
+				reset_province_name = 15036
+				reset_province_name = 14943
+				reset_province_name = 14988
+				473 = { clr_state_flag = HUN_Szeklerland }
+			}
+			
+			#Szeklerland_SZE
+			if = {
+				limit = {
+					FROM.FROM = { state = 473 }
+					473 = { NOT = { has_state_flag = SZE_Szeklerland } }
+					ROOT = { original_tag = SZE }
+				}
+				473 = { set_state_name = Székelyföld }
+				set_province_name = { id = 15036 name = Sepsiszentgyörgy }
+				set_province_name = { id = 14943 name = Marosvásárhely }
+				set_province_name = { id = 14988 name = Székelyudvarhely }
+				473 = { set_state_flag = SZE_Szeklerland }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 473 }
+					473 = { has_state_flag = SZE_Szeklerland }
+					ROOT = { NOT = { original_tag = SZE } }
+				}
+				473 = { reset_state_name = yes }
+				reset_province_name = 15036
+				reset_province_name = 14943
+				reset_province_name = 14988
+				473 = { clr_state_flag = SZE_Szeklerland }
+			}
+			
+			#Szeklerland_TRA
+			if = {
+				limit = {
+					FROM.FROM = { state = 473 }
+					473 = { NOT = { has_state_flag = TRA_Szeklerland } }
+					ROOT = { original_tag = TRA }
+				}
+				473 = { set_state_name = Székelyföld }
+				set_province_name = { id = 15036 name = Sepsiszentgyörgy }
+				set_province_name = { id = 14943 name = Marosvásárhely }
+				set_province_name = { id = 14988 name = Székelyudvarhely }
+				473 = { set_state_flag = SZE_Szeklerland }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 473 }
+					473 = { has_state_flag = TRA_Szeklerland }
+					ROOT = { NOT = { original_tag = TRA } }
+				}
+				473 = { reset_state_name = yes }
+				reset_province_name = 15036
+				reset_province_name = 14943
+				reset_province_name = 14988
+				473 = { clr_state_flag = TRA_Szeklerland }
+			}
+			
+			#Turda
+			if = {
+				limit = {
+					FROM.FROM = { state = 518 }
+					518 = { NOT = { has_state_flag = HUN_Turda } }
+					ROOT = { original_tag = HUN }
+				}
+				518 = { set_state_name = Torda }
+				set_province_name = { id = 10788 name = Vajdahunyad }			
+				518 = { set_state_flag = HUN_Turda }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 518 }
+					518 = { has_state_flag = HUN_Turda }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				518 = { reset_state_name = yes }
+				reset_province_name = 10788
+				518 = { clr_state_flag = HUN_Turda }
+			}
+
+			
+			#Sibiu-Brasov
+			if = {
+				limit = {
+					FROM.FROM = { state = 238 }
+					238 = { NOT = { has_state_flag = HUN_Sibiu-Brasov } }
+					ROOT = { original_tag = HUN }
+				}
+				238 = { set_state_name = Nagyszeben-Brassó }
+				set_province_name = { id = 15123 name = Brassó }
+				set_province_name = { id = 10179 name = Nagyszeben }
+				set_province_name = { id = 2945 name = Gyulafehérvár }	
+				238 = { set_state_flag = HUN_Sibiu-Brasov }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 238 }
+					238 = { has_state_flag = HUN_Sibiu-Brasov }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				238 = { reset_state_name = yes }
+				reset_province_name = 15123
+				reset_province_name = 10179
+				reset_province_name = 2945
+				238 = { clr_state_flag = HUN_Sibiu-Brasov }
+			}
+			
+			#Banat
+			if = {
+				limit = {
+					FROM.FROM = { state = 101 }
+					101 = { NOT = { has_state_flag = HUN_Banat } }
+					ROOT = { original_tag = HUN }
+				}
+				101 = { set_state_name = Bánság }
+				set_province_name = { id = 15182 name = Temesvár }
+				set_province_name = { id = 15255 name = Karánsebes }
+				101 = { set_state_flag = HUN_Banat }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 101 }
+					101 = { has_state_flag = HUN_Banat }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				101 = { reset_state_name = yes }
+				reset_province_name = 15182
+				reset_province_name = 15255
+				101 = { clr_state_flag = HUN_Banat }
+			}
+			
+			#Crisana
+			if = {
+				limit = {
+					FROM.FROM = { state = 102 }
+					102 = { NOT = { has_state_flag = HUN_Crisana } }
+					ROOT = { original_tag = HUN }
+				}
+				102 = { set_state_name = Körösvidék }
+				102 = { set_state_flag = HUN_Crisana }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 102 }
+					102 = { has_state_flag = HUN_Crisana }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				102 = { reset_state_name = yes }
+				102 = { clr_state_flag = HUN_Crisana }
+			}
+			
+			#Subotica
+			if = {
+				limit = {
+					FROM.FROM = { state = 159 }
+					159 = { NOT = { has_state_flag = HUN_Subotica } }
+					ROOT = { original_tag = HUN }
+				}
+				159 = { set_state_name = Szabadka }
+				set_province_name = { id = 15180 name = Szabadka }
+				set_province_name = { id = 4756 name = Zombor }
+				159 = { set_state_flag = HUN_Subotica }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 159 }
+					159 = { has_state_flag = HUN_Subotica }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				159 = { reset_state_name = yes }
+				reset_province_name = 15180
+				reset_province_name = 4756
+				159 = { clr_state_flag = HUN_Subotica }
+			}
+			
+			#Kikinda
+			if = {
+				limit = {
+					FROM.FROM = { state = 476 }
+					476 = { NOT = { has_state_flag = HUN_Nagykikinda } }
+					ROOT = { original_tag = HUN }
+				}
+				476 = { set_state_name = Nagykikinda }
+				set_province_name = { id = 9797 name = Nagykikinda }
+				476 = { set_state_flag = HUN_Kikinda }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 476 }
+					476 = { has_state_flag = HUN_Nagykikinda }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				476 = { reset_state_name = yes }
+				reset_province_name = 9797
+				476 = { clr_state_flag = HUN_Nagykikinda }
+			}
+			
+			#West Banat
+			if = {
+				limit = {
+					FROM.FROM = { state = 363 }
+					363 = { NOT = { has_state_flag = HUN_West_Banat } }
+					ROOT = { original_tag = HUN }
+				}
+				363 = { set_state_name = Nyugat_Bansag }
+				set_province_name = { id = 9672 name = Nagybecskerek }
+				set_province_name = { id = 19995 name = Pancsevó }
+				set_province_name = { id = 3048 name = Versec }
+				363 = { set_state_flag = HUN_West_Banat }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 363 }
+					363 = { has_state_flag = HUN_West_Banat }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				363 = { reset_state_name = yes }
+				reset_province_name = 9672
+				reset_province_name = 19995
+				reset_province_name = 3048
+				363 = { clr_state_flag = HUN_West_Banat }
+			}
+			
+			#Novi Sad
+			if = {
+				limit = {
+					FROM.FROM = { state = 477 }
+					477 = { NOT = { has_state_flag = HUN_Novi_Sad } }
+					ROOT = { original_tag = HUN }
+				}
+				477 = { set_state_name = Újvidék }
+				set_province_name = { id = 4695 name = Újvidék }
+				477 = { set_state_flag = HUN_Novi_Sad }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 477 }
+					477 = { has_state_flag = HUN_Novi_Sad }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				477 = { reset_state_name = yes }
+				reset_province_name = 4695
+				477 = { clr_state_flag = HUN_Novi_Sad }
+			}
+			
+			#Syrmia
+			if = {
+				limit = {
+					FROM.FROM = { state = 364 }
+					364 = { NOT = { has_state_flag = HUN_Syrmia } }
+					ROOT = { original_tag = HUN }
+				}
+				364 = { set_state_name = Szerémség }
+				set_province_name = { id = 4908 name = Árpatarló }
+				364 = { set_state_flag = HUN_Syrmia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 364 }
+					364 = { has_state_flag = HUN_Syrmia }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				364 = { reset_state_name = yes }
+				reset_province_name = 4908
+				364 = { clr_state_flag = HUN_Syrmia }
+			}
+			
+			#Burgenland
+			if = {
+				limit = {
+					FROM.FROM = { state = 399 }
+					399 = { NOT = { has_state_flag = HUN_Burgenland } }
+					ROOT = { original_tag = HUN }
+				}
+				399 = { set_state_name = Őrvidék }
+				set_province_name = { id = 3414 name = Kismárton }
+				set_province_name = { id = 1892 name = Németújvár }
+				set_province_name = { id = 692 name = Felsőpulya }
+				399 = { set_state_flag = HUN_Burgenland }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 399 }
+					399 = { has_state_flag = HUN_Burgenland }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				399 = { reset_state_name = yes }
+				reset_province_name = 3414
+				reset_province_name = 1892
+				reset_province_name = 692
+				399 = { clr_state_flag = HUN_Burgenland }
+			}
+			
+			#Croatia
+			if = {
+				limit = {
+					FROM.FROM = { state = 158 }
+					158 = { NOT = { has_state_flag = HUN_Croatia } }
+					ROOT = { original_tag = HUN }
+				}
+				158 = { set_state_name = Horvátország }
+				set_province_name = { id = 7506 name = Zágráb }
+				set_province_name = { id = 8383 name = Eszék }
+				set_province_name = { id = 8620 name = Varasd }
+				set_province_name = { id = 5639 name = Verőce }
+				set_province_name = { id = 9490 name = Sziszek }
+				set_province_name = { id = 6579 name = Bród }
+				set_province_name = { id = 5765 name = Kapronca }
+				set_province_name = { id = 3662 name = Belovár }
+				158 = { set_state_flag = HUN_Croatia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 158 }
+					158 = { has_state_flag = HUN_Croatia }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				158 = { reset_state_name = yes }
+				reset_province_name = 7506
+				reset_province_name = 8383
+				reset_province_name = 8620
+				reset_province_name = 5639
+				reset_province_name = 9490
+				reset_province_name = 6579
+				reset_province_name = 5765
+				reset_province_name = 3662
+				158 = { clr_state_flag = HUN_Croatia }
+			}
+			
+			#Medimurje
+			if = {
+				limit = {
+					FROM.FROM = { state = 419 }
+					419 = { NOT = { has_state_flag = HUN_Medimurje } }
+					ROOT = { original_tag = HUN }
+				}
+				419 = { set_state_name = Muraköz }
+				set_province_name = { id = 10902 name = Csáktornya }
+				419 = { set_state_flag = HUN_Medimurje }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 419 }
+					419 = { has_state_flag = HUN_Medimurje }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				419 = { reset_state_name = yes }
+				reset_province_name = 10902
+				419 = { clr_state_flag = HUN_Medimurje }
+			}
+			
+			#Prekmurje
+			if = {
+				limit = {
+					FROM.FROM = { state = 385 }
+					385 = { NOT = { has_state_flag = HUN_Prekmurje } }
+					ROOT = { original_tag = HUN }
+				}
+				385 = { set_state_name = Muravidék }
+				set_province_name = { id = 15092 name = Muraszombat }
+				385 = { set_state_flag = HUN_Prekmurje }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 385 }
+					385 = { has_state_flag = HUN_Prekmurje }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				385 = { reset_state_name = yes }
+				reset_province_name = 15092
+				385 = { clr_state_flag = HUN_Prekmurje }
+			}
+			
+			#Beli Manastir
+			if = {
+				limit = {
+					FROM.FROM = { state = 420 }
+					420 = { NOT = { has_state_flag = HUN_Beli_Manastir } }
+					ROOT = { original_tag = HUN }
+				}
+				420 = { set_state_name = Drávaszög }
+				420 = { set_state_flag = HUN_Beli_Manastir }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 420 }
+					420 = { has_state_flag = HUN_Beli_Manastir }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				420 = { reset_state_name = yes }
+				420 = { clr_state_flag = HUN_Beli_Manastir }
+			}
+			
+			#Licko Senjska
+			if = {
+				limit = {
+					FROM.FROM = { state = 423 }
+					423 = { NOT = { has_state_flag = HUN_Licko_Senjska } }
+					ROOT = { original_tag = HUN }
+				}
+				423 = { set_state_name = Lika_Zengg_Megye }
+				set_province_name = { id = 6477 name = Károlyváros }
+				423 = { set_state_flag = HUN_Licko_Senjska }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 423 }
+					423 = { has_state_flag = HUN_Licko_Senjska }
+					ROOT = { NOT = { original_tag = HUN } }
+				}
+				423 = { reset_state_name = yes }
+				reset_province_name = 6477
+				423 = { clr_state_flag = HUN_Licko_Senjska }
+			}
+			
+			#Istria
+			if = {
+				limit = {
+					FROM.FROM = { state = 386 }
+					386 = { NOT = { has_state_flag = YUG_Istria } }
+					ROOT = { original_tag = YUG }
+				}
+				386 = { set_state_name = Istra }
+				set_province_name = { id = 11212 name = Pula }
+				386 = { set_state_flag = YUG_Istria }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 386 }
+					386 = { has_state_flag = YUG_Istria }
+					ROOT = { NOT = { original_tag = YUG } }
+				}
+				386 = { reset_state_name = yes }
+				reset_province_name = 11212
+				reset_province_name = 15352
+				386 = { clr_state_flag = YUG_Istria }
+			}
+			
+			#Fiume
+			if = {
+				limit = {
+					FROM.FROM = { state = 521 }
+					521 = { NOT = { has_state_flag = YUG_Fiume } }
+					ROOT = { original_tag = YUG }
+				}
+				521 = { set_state_name = Rijeka }
+				set_province_name = { id = 15352 name = Rijeka }
+				521 = { set_state_flag = YUG_Fiume }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 521 }
+					521 = { has_state_flag = YUG_Fiume }
+					ROOT = { NOT = { original_tag = YUG } }
+				}
+				521 = { reset_state_name = yes }
+				reset_province_name = 15352
+				521 = { clr_state_flag = YUG_Fiume }
+			}
+			
+			#Julian Venetia
+			if = {
+				limit = {
+					FROM.FROM = { state = 38 }
+					38 = { NOT = { has_state_flag = YUG_Julian } }
+					ROOT = { original_tag = YUG }
+				}
+				38 = { set_state_name = YUG_J_Carniola }
+				set_province_name = { id = 15348 name = Koper }
+				set_province_name = { id = 10242 name = Kobarid }
+				38 = { set_state_flag = YUG_Julian }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 38 }
+					38 = { has_state_flag = YUG_Julian }
+					ROOT = { NOT = { original_tag = YUG } }
+				}
+				38 = { reset_state_name = yes }
+				reset_province_name = 15348
+				reset_province_name = 10242
+				38 = { clr_state_flag = YUG_Julian }
+			}
+			
+			#Zara
+			if = {
+				limit = {
+					FROM.FROM = { state = 56 }
+					56 = { NOT = { has_state_flag = YUG_Zara } }
+					ROOT = { original_tag = YUG }
+				}
+				56 = { set_state_name = Zadar }
+				set_province_name = { id = 7018 name = Zadar }
+				set_province_name = { id = 20353 name = Lastovo }
+				56 = { set_state_flag = YUG_Zara }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 56 }
+					56 = { has_state_flag = YUG_Zara }
+					ROOT = { NOT = { original_tag = YUG } }
+				}
+				56 = { reset_state_name = yes }
+				reset_province_name = 7018
+				reset_province_name = 20353
+				56 = { clr_state_flag = YUG_Zara }
+			}
+			
+			#Trieste
+			if = {
+				limit = {
+					FROM.FROM = { state = 489 }
+					489 = { NOT = { has_state_flag = YUG_Trieste } }
+					ROOT = { original_tag = YUG }
+				}
+				489 = { set_state_name = Trst }
+				set_province_name = { id = 3579 name = Trst }
+				set_province_name = { id = 11453 name = Gorica }
+				489 = { set_state_flag = YUG_Trieste }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 489 }
+					489 = { has_state_flag = YUG_Trieste }
+					ROOT = { NOT = { original_tag = YUG } }
+				}
+				489 = { reset_state_name = yes }
+				reset_province_name = 3579
+				reset_province_name = 11453
+				489 = { clr_state_flag = YUG_Trieste }
+			}
+			
+			#Udine
+			if = {
+				limit = {
+					FROM.FROM = { state = 407 }
+					407 = { NOT = { has_state_flag = YUG_Udine } }
+					ROOT = { original_tag = YUG }
+				}
+				407 = { set_state_name = Videm }
+				set_province_name = { id = 15228 name = Videm }
+				407 = { set_state_flag = YUG_Udine }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 407 }
+					407 = { has_state_flag = YUG_Udine }
+					ROOT = { NOT = { original_tag = YUG } }
+				}
+				407 = { reset_state_name = yes }
+				reset_province_name = 15228
+				407 = { clr_state_flag = YUG_Udine }
+			}
+			
+			if = {
+				limit = {
+					FROM.FROM = { state = 407 }
+					407 = { NOT = { has_state_flag = GER_Udine } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				407 = { set_state_name = Weiden }
+				set_province_name = { id = 15228 name = Weiden }
+				407 = { set_state_flag = GER_Udine }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 407 }
+					407 = { has_state_flag = GER_Udine }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				407 = { reset_state_name = yes }
+				reset_province_name = 15228
+				407 = { clr_state_flag = GER_Udine }
+			}
+			
+			#South Tyrol
+			if = {
+				limit = {
+					FROM.FROM = { state = 43 }
+					43 = { NOT = { has_state_flag = GER_Southtyrol } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				43 = { set_state_name = Südtirol }
+				set_province_name = { id = 5464 name = Bozen }
+				43 = { set_state_flag = GER_Southtyrol }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 43 }
+					43 = { has_state_flag = GER_Southtyrol }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				43 = { reset_state_name = yes }
+				reset_province_name = 5464
+				43 = { clr_state_flag = GER_Southtyrol }
+			}
+			
+			#Trentino
+			if = {
+				limit = {
+					FROM.FROM = { state = 452 }
+					452 = { NOT = { has_state_flag = GER_Trentino } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				452 = { set_state_name = Trent }
+				set_province_name = { id = 7625 name = Trent }
+				452 = { set_state_flag = GER_Trentino }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 452 }
+					452 = { has_state_flag = GER_Trentino }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				452 = { reset_state_name = yes }
+				reset_province_name = 7625
+				452 = { clr_state_flag = GER_Trentino }
+			}
+			
+			#Pordenone
+			if = {
+				limit = {
+					FROM.FROM = { state = 488 }
+					488 = { NOT = { has_state_flag = GER_Pordenone } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				488 = { set_state_name = Portenau }
+				set_province_name = { id = 15248 name = Portenau }
+				488 = { set_state_flag = GER_Pordenone }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 488 }
+					488 = { has_state_flag = GER_Pordenone }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				488 = { reset_state_name = yes }
+				reset_province_name = 15248
+				488 = { clr_state_flag = GER_Pordenone }
+			}
+			
+			#Belluno
+			if = {
+				limit = {
+					FROM.FROM = { state = 487 }
+					487 = { NOT = { has_state_flag = GER_Belluno } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				487 = { set_state_name = Beilun }
+				set_province_name = { id = 11029 name = Beilun }
+				487 = { set_state_flag = GER_Belluno }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 487 }
+					487 = { has_state_flag = GER_Belluno }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				487 = { reset_state_name = yes }
+				reset_province_name = 11029
+				487 = { clr_state_flag = GER_Belluno }
+			}
+			
+			#Trieste GER
+			if = {
+				limit = {
+					FROM.FROM = { state = 489 }
+					489 = { NOT = { has_state_flag = GER_Trieste } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				489 = { set_state_name = Triest }
+				set_province_name = { id = 3579 name = Triest }
+				set_province_name = { id = 11453 name = Gorz }
+				489 = { set_state_flag = GER_Trieste }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 489 }
+					489 = { has_state_flag = GER_Trieste }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				489 = { reset_state_name = yes }
+				reset_province_name = 3579
+				reset_province_name = 11453
+				489 = { clr_state_flag = GER_Trieste }
+			}
+			
+			#Julisch Venetien
+			if = {
+				limit = {
+					FROM.FROM = { state = 38 }
+					38 = { NOT = { has_state_flag = GER_Julian } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				38 = { set_state_name = GER_J_Venetia }
+				set_province_name = { id = 15348 name = Gafers }
+				set_province_name = { id = 10242 name = Karfreit }
+				38 = { set_state_flag = GER_Julian }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 38 }
+					38 = { has_state_flag = GER_Julian }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				38 = { reset_state_name = yes }
+				reset_province_name = 15348
+				reset_province_name = 10242
+				38 = { clr_state_flag = GER_Julian }
+			}
+			
+			#Istrien
+			if = {
+				limit = {
+					FROM.FROM = { state = 386 }
+					386 = { NOT = { has_state_flag = GER_Istria } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				386 = { set_state_name = Istrien }
+				set_province_name = { id = 15352 name = Pflaum }
+				386 = { set_state_flag = GER_Istria }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 386 }
+					386 = { has_state_flag = GER_Istria }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				386 = { reset_state_name = yes }
+				reset_province_name = 15352
+				386 = { clr_state_flag = GER_Istria }
+			}
+			
+			#Pflaum
+			if = {
+				limit = {
+					FROM.FROM = { state = 521 }
+					521 = { NOT = { has_state_flag = GER_Fiume } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				521 = { set_state_name = Pflaum }
+				set_province_name = { id = 15352 name = Pflaum }
+				521 = { set_state_flag = GER_Fiume }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 521 }
+					521 = { has_state_flag = GER_Fiume }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				521 = { reset_state_name = yes }
+				reset_province_name = 15352
+				521 = { clr_state_flag = GER_Fiume }
+			}
+			
+			#Slovenia
+			if = {
+				limit = {
+					FROM.FROM = { state = 99 }
+					99 = { NOT = { has_state_flag = GER_Slovenia } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				99 = { set_state_name = Untersteiermark }
+				set_province_name = { id = 15145 name = Marburg }
+				99 = { set_state_flag = GER_Slovenia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 99 }
+					99 = { has_state_flag = GER_Slovenia }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				99 = { reset_state_name = yes }
+				reset_province_name = 15145
+				99 = { clr_state_flag = GER_Slovenia }
+			}
+			
+			#Ljubljana
+			if = {
+				limit = {
+					FROM.FROM = { state = 384 }
+					384 = { NOT = { has_state_flag = GER_Slovenia } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				384 = { set_state_name = Unterkrain }
+				set_province_name = { id = 19998 name = Laibach }
+				set_province_name = { id = 1975 name = Neustadtl }
+				384 = { set_state_flag = GER_Slovenia }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 384 }
+					384 = { has_state_flag = GER_Slovenia }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				384 = { reset_state_name = yes }
+				reset_province_name = 19998
+				reset_province_name = 1975
+				384 = { clr_state_flag = GER_Slovenia }
+			}
+			
+			#Upper Carniola
+			if = {
+				limit = {
+					FROM.FROM = { state = 601 }
+					601 = { NOT = { has_state_flag = GER_Carniola } }
+					ROOT = { OR = { original_tag = GER original_tag = AUS } }
+				}
+				601 = { set_state_name = Oberkrain }
+				set_province_name = { id = 15168 name = Krainburg }
+				601 = { set_state_flag = GER_Carniola }
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 601 }
+					601 = { has_state_flag = GER_Carniola }
+					ROOT = { NOT = { original_tag = GER original_tag = AUS } }
+				}
+				601 = { reset_state_name = yes }
+				reset_province_name = 15168
+				601 = { clr_state_flag = GER_Carniola }
+			}
+			
+			### MEGALI GREECE ###
+			
+
+		}
+	}
+}

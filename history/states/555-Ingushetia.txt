@@ -1,0 +1,23 @@
+state={
+	id=555
+	name="STATE_555"
+	
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = ING
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+	
+	provinces={
+		4409 9288 14521 14692 
+	}
+	
+	manpower=122851
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

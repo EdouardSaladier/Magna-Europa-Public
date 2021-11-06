@@ -1,0 +1,17 @@
+state={
+	id=360
+	name="STATE_360"
+	provinces={
+		1238 4667 6704 7048 15851
+	}
+	manpower=290000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	history={
+		owner = BUL
+		add_core_of=BUL
+		buildings={
+			infrastructure=3
+		}
+    }
+}

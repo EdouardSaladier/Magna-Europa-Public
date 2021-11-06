@@ -1,0 +1,37 @@
+
+state={
+	id=238
+	name="STATE_238"
+	resources={
+		steel=4.000
+	}
+
+	history={
+		owner = ROM
+		add_core_of = ROM
+		add_core_of = TRA
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			10179 5 
+		}
+		victory_points = {
+			15123 20 
+		}
+		victory_points = {
+			2945 5 
+		}
+
+	}
+
+	provinces={
+		206 1076 2050 2599 2945 2733 3794 3899 5376 5907 6045 6926 7663 9463 9614 9668 9981 10158 10179 10282 10745 11256 15020 15067 15123 15133 15134 15155 15173 15183 15189 15207 15247 
+	}
+	manpower=973380
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,22 @@
+state={
+	id=553
+	name="STATE_553"
+	
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = KAB
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+	
+	provinces={
+		1377 4812 6637 6974 7649 14484 14589 14607 14655 
+	}
+	manpower=313774
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

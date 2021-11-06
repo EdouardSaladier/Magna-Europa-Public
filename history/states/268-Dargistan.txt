@@ -1,0 +1,41 @@
+
+state={
+	id=268
+	name="STATE_268"
+	resources={
+		oil=27.000
+	}
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = DAR
+		buildings = {
+			infrastructure = 4
+
+		}
+		victory_points = {
+			8403 10 
+		}
+		victory_points = {
+			14515 1 
+		}
+		victory_points = {
+			1813 1 
+		}
+		victory_points = {
+			9943 1 
+		}
+		victory_points = {
+			14249 1 
+		}
+
+	}
+
+	provinces={
+		4129 8155 11338 14533 14538 
+	}
+	manpower=150421
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

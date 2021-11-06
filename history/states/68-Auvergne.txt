@@ -1,0 +1,29 @@
+
+state={
+	id=68
+	name="STATE_68"
+
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			15166 15 
+		}
+		victory_points = {
+			19908 10 
+		}
+
+	}
+
+	provinces={
+		155 1774 1896 3361 3367 3689 3940 5581 5682 6306 6485 6831 8338 8566 8909 9215 9689 9857 10048 10117 10749 10991 15089 15151 15166 15222 15242 15272 15321 15364 15367 15375 15389 15404 15421 19614 19615 19616 19819 19820 19822 19829 19833 19834 19835 19837 19841 19842 19848 19867 19879 19892 19903 19908 19938 19946 19953 19954 
+	}
+	manpower=877800
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,16 @@
+state={
+	id=600
+	name="STATE_600"
+	provinces={
+		15486 20037 20039 
+	}
+	history={
+		owner = FRA
+		add_core_of = FRA
+		buildings = { infrastructure = 6 }
+	}
+	manpower=376
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	impassable=yes
+}
